@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glacy</title>
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/inter-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="page__body">
+    <header class="main-header">
+      <div class="main-header__wrapper">
+        <a class="main-header__logo" href="/">
+          <svg class="main-header__logo-icon main-header__logo-icon--mobile" aria-label="Логотип Glacy." focusable="false" width="120" height="49">
+            <use href="img/sprite.svg#logo-mobile"></use>
+          </svg>
+          <svg class="main-header__logo-icon main-header__logo-icon--desktop" aria-label="Логотип Glacy." focusable="false" width="137" height="56">
+            <use href="img/sprite.svg#logo-desktop"></use>
+          </svg>
+        </a>
+
+        <a class="main-header__tel tel" href="tel:+78005558628">+7 800 555-86-28</a>
+      </div>
+
+      <nav class="main-nav main-nav--opened main-nav--nojs">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню.</span>
+        </button>
+
+        <div class="main-nav__wrapper main-nav__wrapper--left">
+          <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#">
+              Каталог
+            </a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#">
+              Доставка и оплата
+            </a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link" href="#">
+              О компании
+            </a>
+          </li>
+          </ul>
+        </div>
+
+        <div class="main-nav__wrapper main-nav__wrapper--right">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a class="main-nav__tel tel" href="tel:+78005558628">+7 800 555-86-28</a>
+            </li>
+
+            <li class="main-nav__item main-nav__item--popup popup-search popup-search--closed">
+              <a class="popup-search__link" href="#">
+                <svg class="popup-search__link-icon" aria-label="Открыть поиск по сайту." focusable="false" width="15" height="15">
+                  <use href="img/sprite.svg#icon-search"></use>
+                </svg>
+              </a>
+
+              <div class="popup-search__wrapper popup-search__wrapper--closed">
+                <form class="popup-search__form" action="https://echo.htmlacademy.ru/" method="post">
+                  <input class="popup-search__input" type="text" name="search" placeholder="Поиск по сайту">
+                </form>
+              </div>
+            </li>
+
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--login" href="#">
+                <svg class="main-nav__icon" focusable="false" width="15" height="15">
+                  <use href="img/sprite.svg#icon-login"></use>
+                </svg>
+                <span class="main-nav__text">Вход</span>
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--cart" href="#">
+                <svg class="main-nav__icon" focusable="false" width="15" height="15">
+                  <use href="img/sprite.svg#icon-cart"></use>
+                </svg>
+                <span class="main-nav__text">Пусто</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-page">
+
+    </main>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

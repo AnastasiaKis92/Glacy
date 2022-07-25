@@ -1,0 +1,41 @@
+.popup-search__link
+    display: none
+
+.popup-search__input
+    width: 100%
+    padding: 0.75rem 0.875rem
+    @include Inter-400
+    color: $extra-dark
+    border: 1px solid $gray
+    border-radius: 4px
+
+    &::placeholder
+        color: $gray
+
+@media (min-width: $desktop-width)
+    .popup-search__wrapper
+        position: absolute
+        right: 233px
+        width: 356px
+        margin-top: 0.5rem
+        padding: 1.5rem 1rem
+        background-color: $white
+        border-radius: 4px
+
+        &--closed
+            display: none
+
+    .popup-search__link
+        display: block
+        width: 34px
+        height: 34px
+        padding: 0.6rem
+        background-color: fade-out($white, 0.7)
+        border-radius: 50%
+        @include link
+
+    .popup-search__link-icon
+        display: block
+
+    .popup-search__input
+        width: 100%

@@ -1,0 +1,27 @@
+.main-header__wrapper
+    display: flex
+    justify-content: space-between
+    padding: 0.625rem $xs 0
+
+.main-header__logo-icon--desktop
+    display: none
+
+@media (min-width: $tablet-width)
+    .main-header
+        display: flex
+        align-items: center
+        padding: 1.5rem $xm
+
+    .main-header__logo-icon
+        &--mobile
+            display: none
+
+        &--desktop
+            display: block
+
+    .main-header__tel
+        display: none
+
+@media (min-width: $desktop-width)
+    .main-header
+        padding: 1.5rem $xl
