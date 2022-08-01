@@ -7,11 +7,9 @@
     min-height: 100%
     min-width: 375px
     width: 100%
+    max-width: 1920px
+    margin: 0 auto
     background-color: $light-pink
     @include Inter-400
-    @include font(0.8rem, 1.25) // 14px, 20px
+    @include font(1rem, 1.25) // 16px, 20px
     color: $extra-dark
-
-@media (min-width: $desktop-width)
-    .page__body
-        @include font(1rem, 1.25) // 16px, 20px

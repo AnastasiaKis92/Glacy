@@ -1,0 +1,55 @@
+.popup-login__wrapper
+    display: none
+
+    &.active
+        display: block
+
+@media (min-width: $tablet-width)
+    .popup-login
+        position: relative
+
+    .popup-login__wrapper
+        position: absolute
+        right: 15%
+        width: 30vw
+        min-width: 420px
+        margin-top: 1rem
+        padding: 3rem
+        background-color: $white
+        border-radius: 4px
+        transition: 0.3s
+        z-index: 30
+
+    .popup-login__title
+        display: block
+        margin: 0
+        padding-bottom: 2rem
+        @include Inter-700
+        @include font(1.5rem, calc(24 / 30))
+
+    .popup-login__form
+        display: grid
+        grid-template-columns: 1fr 1fr
+        row-gap: 1rem
+        column-gap: 1.5rem
+
+    .popup-login__input
+        grid-column: 1 / -1
+        width: 100%
+
+        &:last-of-type
+            margin-bottom: 1rem
+
+    .popup-login__list
+        @include reset-list
+
+    .popup-login__item
+        @include font(0.875rem, 0.7)
+        padding-bottom: 0.6rem
+
+    .popup-login__link
+        text-decoration: underline
+
+@media (min-width: $desktop-width)
+    .popup-login__wrapper
+        margin-top: 0.5rem

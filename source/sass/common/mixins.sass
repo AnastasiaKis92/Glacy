@@ -28,11 +28,17 @@
 @mixin link
     &
         &:hover
+            transition: 0.3s
             background-color: fade-out($white, 0.5)
 
         &:active
             background-color: $white
 
+        &:focus
+            outline: 2px solid $extra-dark
+
+@mixin focus
+    &
         &:focus
             outline: 2px solid $extra-dark
 

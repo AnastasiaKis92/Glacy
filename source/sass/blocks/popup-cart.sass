@@ -1,0 +1,83 @@
+.popup-cart__wrapper
+    display: none
+
+    &.active
+        display: block
+
+@media (min-width: $tablet-width)
+    .popup-cart
+        position: relative
+
+    .popup-cart__wrapper
+        position: absolute
+        right: 0
+        width: 33vw
+        min-width: 441px
+        margin-top: 1rem
+        padding: 3rem
+        background-color: $white
+        border-radius: 4px
+        transition: 0.3s
+        z-index: 30
+
+    .popup-cart__title
+        margin: 0
+        padding-bottom: 2rem
+        @include Inter-700
+        @include font(1.5rem, calc(24 / 30))
+
+    .popup-cart__list
+        @include reset-list
+        margin-bottom: 2rem
+        padding-bottom: 2rem
+        border-bottom: 1px solid $light-gray
+
+    .popup-cart__item
+        display: grid
+        grid-template-columns: 46px auto 1fr 9px
+        column-gap: 1rem
+        & + &
+            padding-top: 1.5rem
+
+    .popup-cart__img
+        padding-right: 1rem
+        box-sizing: content-box
+
+    .popup-cart__cart
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+    .popup-cart__name
+        margin: 0
+        @include Inter-700
+        @include font(1.125rem, calc(18 / 22))
+
+    .popup-cart__features
+        margin: 0
+        padding-top: 0.5rem
+        @include Inter-400
+        @include font(0.875rem, 0.7)
+        color: $gray
+
+    .popup-cart__price
+        margin-left: auto
+        @include Inter-700
+        @include font(1.125rem, calc(18 / 22))
+
+    .popup-cart__button
+        @include reset-btn
+
+    .popup-cart__order-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    .popup-cart__total
+        padding-left: 2rem
+        @include Inter-700
+        @include font(1.125rem, calc(18 / 22))
+
+@media (min-width: $tablet-width)
+    .popup-cart__wrapper
+        margin-top: 0.5rem

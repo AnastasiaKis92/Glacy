@@ -1,2 +1,2 @@
-import './mobile-menu.js';
-import './nav-popup.js';
+import './burger-menu.js';
+import './popup.js';
