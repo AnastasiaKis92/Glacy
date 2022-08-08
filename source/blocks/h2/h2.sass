@@ -1,0 +1,14 @@
+h2
+    margin: 0
+    font-weight: 900
+    @include font(1.25rem, calc(26 / 20)) // 20px 26px
+    text-align: center
+
+@media (min-width: $tablet-width)
+    h2
+        @include font(2rem, calc(38 / 32)) // 32px 38px
+        text-align: left
+
+@media (min-width: $desktop-width)
+    h2
+        @include font(2.25rem, calc(46 / 36)) // 36px 46px

@@ -1,0 +1,53 @@
+.popup-search__form
+    position: relative
+
+.popup-search__input
+    position: relative
+    width: 100%
+    min-width: 180px
+
+.popup-search__button
+    position: absolute
+    width: 16px
+    height: 16px
+    right: 0.6rem
+    @include align-top
+    @include reset-btn
+    opacity: 0.5
+    @include focus
+
+    &::after
+        position: absolute
+        content: ""
+        top: 0
+        left: 0
+        width: 16px
+        height: 16px
+        background-color: $black
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-cross")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: contain
+
+    &:hover,
+    &:active,
+    &:focus
+        opacity: 1
+
+@media (min-width: $desktop-width)
+    .popup-search__wrapper
+        display: none
+        position: absolute
+        right: 233px
+        width: 356px
+        margin-top: 0.5rem
+        padding: 1.5rem 1rem
+        background-color: $white
+        border-radius: 4px
+        z-index: 30
+
+        &.active
+            display: block
+
+    .popup-search__input
+        width: 100%

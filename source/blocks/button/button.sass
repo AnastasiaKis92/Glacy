@@ -1,0 +1,45 @@
+.button
+    @include reset-btn
+    padding: 0.75rem 2rem
+    @include Inter-700
+    @include font(1rem, 1.25)
+    color: $white
+    background-color: $bright-pink
+    border-radius: 26px
+    box-shadow: 0 4px 12px $shadow, 0 0 0 4px fade-out($bright-pink, 0.7)
+    transition: background-color 0.5s
+
+    &:enabled:hover
+        color: $extra-dark
+        background-color: $white
+        box-shadow: 0 4px 12px $shadow, 0 0 0 4px $bright-pink
+        transition: 0.2s
+
+    &:enabled:focus
+        color: $white
+        background-color: $bright-pink
+        box-shadow: 0 4px 12px $shadow, 0 0 0 2px $extra-dark
+
+    &:disabled
+        font-weight: 400
+        background-color: $gray
+        box-shadow: 0 0 0 4px fade-out($extra-dark, 0.7)
+
+    &--secondary
+        color: $extra-dark
+        background-color: $white
+        box-shadow: 0 4px 12px $shadow, 0 0 0 4px fade-out($white, 0.6)
+
+        &:enabled:hover
+            background-color: fade-out($white, 0.6)
+            box-shadow: 0 4px 12px $shadow, 0 0 0 4px $white
+
+        &:enabled:focus
+            color: $extra-dark
+            background-color: $white
+            box-shadow: 0 4px 12px $shadow, 0 0 0 2px $extra-dark
+
+        &:disabled
+            color: $gray
+            background-color: $light-gray
+            box-shadow: 0 0 0 4px fade-out($white, 0.6)

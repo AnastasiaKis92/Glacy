@@ -1,0 +1,27 @@
+include /blocks/mixins/mixins.pug
+
+main.main-page
+  section.promo
+    .promo__wrapper
+      h1.visually-hidden Ассортимент мороженки
+
+      .promo__slider.swiper
+        .promo__slider-wrapper.swiper-wrapper
+          .promo__slide.swiper-slide
+            h2.promo__title Нежный пломбир с клубничным джемом
+            p.promo__text Натуральное мороженое из свежих сливок и молока с вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.
+            .promo__picture
+              +pictureMedia( 'promo__img', 'promo-jam', 'Нежный пломбир c клубничным джемом' )
+          .promo__slide.swiper-slide
+            .promo__picture
+              +pictureMedia( 'promo__img', 'promo-banana', 'Сливочное мороженое со вкусом банана' )
+          .promo__slide.swiper-slide
+            .promo__picture
+              +pictureMedia( 'promo__img', 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу' )
+
+        .promo__pagination.swiper-pagination
+
+        .promo__button-prev.swiper-button-prev
+        .promo__button-next.swiper-button-next
+
+      button.button.button--secondary.promo__button Заказать

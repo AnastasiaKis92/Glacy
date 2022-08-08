@@ -1,0 +1,51 @@
+.header__wrapper
+    display: flex
+    justify-content: space-between
+    padding: 0.625rem $xs 0
+
+.header__logo
+    position: relative
+    width: 120px
+    height: 49px
+    &::after
+        position: absolute
+        content: ""
+        top: 0
+        left: 0
+        width: 120px
+        height: 49px
+        background-color: $extra-dark
+        mask-image: url("../images/svg-sprites/sprite.svg#logo-mobile")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: contain
+
+@media (min-width: $tablet-width)
+    .header
+        display: flex
+        align-items: center
+        padding: 1.5rem $xm
+
+@media (min-width: $desktop-width)
+    .header
+        padding: 1.5rem $xl
+
+    .header__wrapper
+        padding: 0
+
+    .header__logo
+        width: 140px
+        height: 60px
+        padding: calc(6rem / 16) 1rem
+        border-radius: 26px
+        transition: opacity 0.3s
+        @include focus
+        &::after
+            top: 3px
+            left: 2px
+            width: 137px
+            height: 55px
+
+        &:hover
+            opacity: 0.5
+            transition: 0.1s

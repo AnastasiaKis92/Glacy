@@ -1,0 +1,60 @@
+@mixin font($font-size, $line-height)
+    font-size: $font-size
+    line-height: $line-height
+
+@mixin Inter-400
+    font-family: "Inter", "Arial", sans-serif
+    font-weight: 400
+
+@mixin Inter-700
+    font-family: "Inter", "Arial", sans-serif
+    font-weight: 700
+
+@mixin Inter-900
+    font-family: "Inter", "Arial", sans-serif
+    font-weight: 900
+
+@mixin reset-list
+    margin: 0
+    padding: 0
+    list-style: none
+
+@mixin reset-btn
+    padding: 0
+    background-color: transparent
+    border: none
+    cursor: pointer
+
+@mixin link
+    &
+        &:hover
+            background-color: fade-out($white, 0.5)
+            transition-duration: 0.1s
+
+        &:active
+            background-color: $white
+
+        &:focus
+            outline: 2px solid $extra-dark
+
+@mixin focus
+    &
+        &:focus
+            outline: 2px solid $extra-dark
+
+// Центрирование
+@mixin align-center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin align-top
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+@mixin align-left
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)

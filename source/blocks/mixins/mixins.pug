@@ -1,0 +1,18 @@
+mixin listItem ( classNameItem, classNameLink, ...items )
+  each item in items
+    li(class= classNameItem)
+      a(class= classNameLink, href= item.href)= item.text
+
+mixin picture ( className, imgName, alt )
+  picture
+    source(type='image/webp' srcset=`images/${imgName}.webp 1x, images/${imgName}@2x.webp 2x`)
+    img(class= `.${className}` src=`images/${imgName}.png` srcset=`images/${imgName}@2x.png 2x` alt=`${alt}`)
+
+mixin pictureMedia ( className, imgName, alt )
+  picture
+    source(media="(min-width: 1366px)" type="image/webp" srcset=`images/${imgName}-desktop.webp 1x, images/${imgName}-desktop@2x.webp 2x`)
+    source(media="(min-width: 1024px)" type="image/webp" srcset=`images/${imgName}-tablet.webp 1x, images/${imgName}-tablet@2x.webp 2x`)
+    source(type='image/webp' srcset=`images/${imgName}-mobile.webp 1x, images/${imgName}-mobile@2x.webp 2x`)
+    source(media="(min-width: 1366px)" srcset=`images/${imgName}-desktop.png 1x, images/${imgName}-desktop@2x.png 2x`)
+    source(media="(min-width: 1024px)" srcset=`images/${imgName}-tablet.png 1x, images/${imgName}-tablet@2x.png 2x`)
+    img(class= `.${className}` src=`images/${imgName}-mobile.png` srcset=`images/${imgName}-mobile@2x.png 2x` alt=`${alt}`)

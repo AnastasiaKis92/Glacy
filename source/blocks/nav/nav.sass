@@ -1,0 +1,183 @@
+.nav
+    display: flex
+    flex-direction: column
+
+.nav__toggle
+    position: absolute
+    top: 24px
+    right: 20px
+    z-index: 2
+    display: block
+    width: 24px
+    height: 16px
+    padding: 0
+    background-color: transparent
+    cursor: pointer
+    border: none
+
+.nav--opened .nav__toggle
+    top: 21px
+    right: 24px
+    width: 18px
+    height: 18px
+
+    &::before,
+    &::after
+        position: absolute
+        top: 11px
+        right: -3px
+        width: 24px
+        height: 1.5px
+        background-color: $extra-dark
+        content: ""
+
+    &::before
+        transform: rotate(45deg)
+
+    &::after
+        transform: rotate(-45deg)
+
+.nav--closed .nav__toggle
+    &::before
+        position: absolute
+        top: 0px
+        left: 2px
+        width: 19px
+        height: 1.5px
+        background-color: $extra-dark
+        box-shadow: 0 8px 0 0 $extra-dark, 0 16px 0 0 $extra-dark
+        content: ""
+
+.nav__list
+    display: flex
+    flex-direction: column
+    align-items: center
+    @include reset-list
+    width: 100%
+
+.nav__wrapper
+    &--right
+        order: 1
+
+    &--left
+        order: 2
+
+.nav__item
+    padding-bottom: 1rem
+
+    &--popup
+        width: calc( 100% -  2 * $xs)
+        max-width: 25rem
+
+.nav__link
+    &--search
+        display: none
+
+@media (max-width: $mobile-width-only)
+  .nav--closed .nav__item
+    display: none
+
+  // Скрываем кнопку, если не работает js
+  .nav--nojs .nav__toggle
+    display: none
+
+@media (min-width: $tablet-width)
+    .nav
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 100%
+
+    .nav__list
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+    .nav__wrapper
+        &--right
+            order: 2
+
+    .nav__toggle
+        display: none
+
+    .nav__item
+        padding-bottom: 0
+
+        &--popup
+            width: 45%
+
+    .nav__wrapper--right .nav__item:not(:last-of-type)
+        padding-right: 1rem
+
+    .nav__wrapper--left .nav__item:not(:last-of-type)
+        padding-right: 0.2rem
+
+    .nav__link
+        display: block
+        padding: calc(6rem / 16) 1rem
+        text-align: center
+        border-radius: 26px
+
+        &--login,
+        &--cart
+            width: 100%
+            min-width: 99px
+            background-color: fade-out($white, 0.7)
+            &::after
+                position: absolute
+                content: ""
+                top: 50%
+                left: 0.8rem
+                transform: translate(0, -50%)
+                width: 15px
+                height: 15px
+                background-color: $extra-dark
+                mask-repeat: no-repeat
+                mask-position: center
+                mask-size: cover
+
+        &--login
+            &::after
+                mask-image: url("../images/svg-sprites/sprite.svg#icon-login")
+
+        &--cart
+            &::after
+                mask-image: url("../images/svg-sprites/sprite.svg#icon-cart")
+
+        &--search
+            display: none
+
+    .nav__text
+        display: flex
+        padding-left: 1.25rem
+
+@media (min-width: $desktop-width)
+    .nav__item
+        &--popup
+            width: 11%
+
+    .nav__link
+        transition: background-color 0.3s
+        @include link
+
+        &--search
+            position: relative
+            display: block
+            width: 34px
+            height: 34px
+            background-color: fade-out($white, 0.7)
+            border-radius: 50%
+            &::after
+                position: absolute
+                content: ""
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                width: 15px
+                height: 15px
+                background-color: $extra-dark
+                mask-image: url("../images/svg-sprites/sprite.svg#icon-search")
+                mask-repeat: no-repeat
+                mask-position: center
+                mask-size: cover
