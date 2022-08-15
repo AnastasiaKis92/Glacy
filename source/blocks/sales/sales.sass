@@ -30,7 +30,9 @@
     padding-bottom: 1rem
     text-align: center
 
-.sales__img
+.sales__picture img
+    width: 100px
+    height: auto
     padding-bottom: 1rem
 
 @media (min-width: $tablet-width)
@@ -65,13 +67,17 @@
         text-align: left
 
     .sales__picture
-        position: absolute
-        bottom: 39px
-        right: 1rem
-        transform: translateY(44px)
-
-    .sales__img
-        padding-bottom: 0
+        & img
+            position: absolute
+            top: 26%
+            right: 0
+            height: auto
+            padding-bottom: 0
+            clip: rect(auto, auto, 191px, auto)
+        &--primary img
+            width: 150px
+        &--secondary img
+            width: 200px
 
     .sales__button
         margin-top: auto
@@ -94,3 +100,13 @@
 
     .sales__description
         padding-bottom: 2rem
+
+    .sales__picture
+        & img
+            top: 9%
+            height: auto
+            clip: rect(auto, auto, 244px, auto)
+        &--primary img
+            width: 181px
+        &--secondary img
+            width: 232px

@@ -5,6 +5,7 @@ const sass = gulpSass(dartSass);
 import sassGlob from 'gulp-sass-glob';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
+import csso from 'postcss-csso';
 import autoprefixer from 'autoprefixer';
 import browserSync from 'browser-sync';
 import rename from 'gulp-rename';
@@ -14,43 +15,76 @@ import svgSprite from 'gulp-svg-sprite';
 import terser from 'gulp-terser';
 import squoosh from 'gulp-libsquoosh';
 import del from 'del';
+import htmlmin from 'gulp-htmlmin';
+import gcmq from 'gulp-group-css-media-queries';
+import critical from 'critical';
+import webpackStream from 'webpack-stream';
 
-// import webpack from 'webpack';
-// import webpackStream from 'webpack-stream';
-// import webpackConfig from './webpack.config.js';
+// Scripts
 
-// gulp.task('js', () => {
-//   gulp.src('./source/scripts/main.js')
-//     .pipe(webpackStream(webpackConfig), webpack)
-//     .pipe(gulp.dest('./build/scripts'));
-// });
+export const script = () => gulp.src('source/scripts/main.js')
+  .pipe(webpackStream({
+    mode: 'none',
+    output: {
+      filename: 'main.js',
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js)$/,
+          exclude: /(node_modules)/,
+          loader: 'babel-loader'
+        }
+      ]
+    }
+  }))
+  .pipe(plumber())
+  .pipe(terser())
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(gulp.dest('./build/scripts'));
 
-// const vendorJS = () => {
-//   const modules = [
-//     'node_modules/swiper/swiper-bundle.min.js',
-//     'node_modules/swiper/swiper-bundle.min.js.map',
-//   ];
+// Критические стили CSS
 
-//   return gulp.src(modules)
-//     .pipe(gulp.dest('build/scripts'));
-// };
+const crPages = ['index'];
 
-// const vendorCSS = () => {
-//   const modules = [
-//     'node_modules/swiper/swiper-bundle.min.css',
-//   ];
+export const criticalCSS = (done) => {
+  crPages.forEach((page) => {
+    critical.generate({
+      base: './build/',
+      src: `${page}.html`,
+      css: [ 'css/styles.css' ],
+      target: {
+        css: `css/${page}-critical.css`,
+        uncritical: `css/${page}-async.css`
+      },
+      width: 1280,
+      height: 480,
+      // include: [
+      // 	'.footer'
+      // ],
+      ignore: {
+        rule: [
+          /swiper/,
+          /swiper-icons/
+        ]
+      }
+    });
+  });
+  done();
+};
 
-//   return gulp.src(modules)
-//     .pipe(gulp.dest('build/css'));
-// };
+// Styles
 
 export const styles = () => gulp.src('source/styles/styles.sass', { sourcemaps: true })
   .pipe(plumber())
   .pipe(sassGlob())
   .pipe(sass.sync().on('error', sass.logError))
+  .pipe(gcmq())
   .pipe(postcss([
-    autoprefixer()
+    autoprefixer(),
+    csso()
   ]))
+  .pipe(rename('styles.min.css'))
   .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
   .pipe(browserSync.stream());
 
@@ -64,14 +98,8 @@ export const template = () => gulp.src('source/pages/*.pug')
       pretty: true
     })
   )
+  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest('build'));
-
-// Scripts
-
-const script = () => gulp.src('source/scripts/*.js')
-  .pipe(plumber())
-  .pipe(terser())
-  .pipe(gulp.dest('build/scripts'));
 
 // Images
 
@@ -170,8 +198,6 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
-  // vendorJS,
-  // vendorCSS,
   gulp.parallel(
     styles,
     template,
@@ -180,6 +206,7 @@ export default gulp.series(
     svg,
     svgSprites
   ),
+  // criticalCSS,
   gulp.series(
     server,
     watcher
