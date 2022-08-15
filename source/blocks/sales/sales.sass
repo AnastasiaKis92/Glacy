@@ -1,4 +1,4 @@
-.sales__wrapper
+.sales
     padding: 1rem $xs
 
 .sales__list
@@ -30,16 +30,22 @@
     padding-bottom: 1rem
     text-align: center
 
-.sales__picture img
-    width: 100px
-    height: auto
-    padding-bottom: 1rem
+.sales__picture
+    & img
+        height: auto
+        padding-bottom: 1rem
+    &--primary img
+        width: 100px
+    &--secondary img
+        width: 150px
 
 @media (min-width: $tablet-width)
-    .sales__wrapper
+    .sales
         padding: 1.5rem $xm
 
     .sales__title
+        width: 40%
+        margin: 0 auto
         padding-bottom: 2rem
         text-align: center
 
@@ -69,11 +75,10 @@
     .sales__picture
         & img
             position: absolute
-            top: 26%
+            top: 22%
             right: 0
-            height: auto
             padding-bottom: 0
-            clip: rect(auto, auto, 191px, auto)
+            clip: rect(auto, auto, 202px, auto)
         &--primary img
             width: 150px
         &--secondary img
@@ -83,16 +88,14 @@
         margin-top: auto
 
 @media (min-width: $desktop-width)
-    .sales__wrapper
-        padding: 3.5rem $xl
+    .sales
+        padding: 4.4rem $xl 3.5rem
 
     .sales__article
         min-height: 268px
         padding: 2.5rem 1rem 2.5rem 2.5rem
 
     .sales__title
-        width: 443px
-        margin: 0 auto
         padding-bottom: 3.2rem
 
     .sales__text
@@ -104,7 +107,6 @@
     .sales__picture
         & img
             top: 9%
-            height: auto
             clip: rect(auto, auto, 244px, auto)
         &--primary img
             width: 181px

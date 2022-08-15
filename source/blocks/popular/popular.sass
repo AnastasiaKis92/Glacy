@@ -1,0 +1,130 @@
+.popular
+    padding: 1rem $xs
+
+.popular__title
+    padding-bottom: 1rem
+    text-align: center
+
+.popular__article
+    display: grid
+    grid-template-columns: 33% auto
+    column-gap: 1rem
+    row-gap: 1rem
+    justify-items: center
+    padding: 1rem
+    background-color: $white
+    border-radius: 0.5rem
+    & + &
+        margin-top: 1rem
+    & img
+        grid-column: 1/2
+        width: 96px
+        height: auto
+
+.popular__text,
+.popular__price
+    margin: 0
+    font-weight: 700
+    @include font(1.125rem, calc(24 / 18))
+
+.popular__text
+    grid-column: 1/3
+    justify-self: center
+
+.popular__description
+    grid-column: 2/3
+    align-self: center
+    justify-self: center
+    margin: 0
+    text-align: center
+
+.popular__price
+    grid-column: 1/2
+
+.popular__button
+    position: relative
+    grid-column: 2/3
+    justify-self: end
+    width: 32px
+    height: 32px
+    padding: 0
+    box-shadow: none
+    &::after
+        content: ""
+        @include align-center
+        width: 14px
+        height: 14px
+        background-color: $white
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-cart")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: cover
+
+    &:enabled:hover
+        box-shadow: 0 0 0 2px $bright-pink
+        &::after
+            background-color: $extra-dark
+
+    &:disabled
+        box-shadow: none
+        &::after
+            background-color: $basic-dark
+
+@media (min-width: $tablet-width)
+    .popular
+        padding: 1.5rem $xm
+
+    .popular__wrapper
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 1rem
+        row-gap: 1rem
+        justify-content: center
+
+    .popular__title
+        width: 50%
+        margin: 0 auto
+        padding-bottom: 2rem
+
+    .popular__article
+        & + &
+            margin-top: 0
+        & img
+            width: 132px
+
+@media (min-width: $desktop-width)
+    .popular
+        padding: 1.5rem $xl
+
+    .popular__title
+        padding-bottom: 6.5rem
+
+    .popular__wrapper
+        grid-template-columns: repeat(4, 23%)
+        column-gap: 1.875rem
+
+    .popular__article
+        position: relative
+        grid-template-columns: repeat(2, auto)
+        row-gap: 0.8rem
+        justify-items: left
+        align-items: end
+        width: 100%
+        padding: 7.3rem 2.5rem 1.75rem
+        & img
+            @include align-left
+            top: -16%
+            grid-column: 1/3
+            width: 168px
+
+    .popular__text
+        grid-row: 2/3
+
+    .popular__description
+        grid-column: 1/3
+        grid-row: 3/4
+
+    .popular__price,
+    .popular__button
+        grid-row: 4/5
+

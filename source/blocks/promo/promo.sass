@@ -1,4 +1,4 @@
-.promo__wrapper
+.promo
     padding: 0.625rem $xs
 
 .promo__picture
@@ -38,9 +38,6 @@
     z-index: 2
 
 // Swiper
-.promo__slider
-    max-width: 560px
-
 .promo__slider .swiper-button-prev,
 .promo__slider .swiper-button-next
     top: 65%
@@ -74,12 +71,11 @@
     display: none
 
 @media (min-width: $tablet-width)
-    .promo__wrapper
+    .promo
         padding: 1.5rem $xm
 
     // Swiper
     .promo__slider
-        max-width: none
         padding-left: 1rem
 
     .promo__slider .swiper-slide
@@ -130,7 +126,7 @@
         bottom: 15%
 
 @media (min-width: $desktop-width)
-    .promo__wrapper
+    .promo
         display: flex
         min-width: 0
         padding: 1.5rem $xl
@@ -147,7 +143,7 @@
         padding: 0
 
     .promo__button
-        bottom: 24%
+        bottom: 22%
 
     .promo__picture
         & img

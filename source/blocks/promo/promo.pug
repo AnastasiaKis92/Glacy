@@ -1,40 +1,39 @@
 section.promo
-  .promo__wrapper
-    h1.visually-hidden Ассортимент мороженки
+  h1.visually-hidden Ассортимент мороженки
 
-    .promo__slider.swiper
-      .promo__slider-wrapper.swiper-wrapper
-        .promo__slide.swiper-slide
-          h2.promo__title Нежный пломбир с&nbsp;клубничным джемом
-          p.promo__text Натуральное мороженое из свежих сливок и молока с вкуснейшим клубничным джемом –&nbsp;это идеальный десерт для всей семьи.
-          .promo__picture
-            +picture( 'promo-jam', 'Нежный пломбир c клубничным джемом', '306', '507')
-        .promo__slide.swiper-slide
-          h2.promo__title Сливочное мороженое со&nbsp;вкусом банана
-          p.promo__text Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день.
-          .promo__picture.promo__picture--secondary
-            +picture( 'promo-banana', 'Сливочное мороженое со вкусом банана', '306', '507')
-        .promo__slide.swiper-slide
-          h2.promo__title Карамельный пломбир с&nbsp;маршмеллоу
-          p.promo__text Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.
-          .promo__picture.promo__picture--tertiary
-            +picture( 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу', '306', '507')
+  .promo__slider.swiper
+    .promo__slider-wrapper.swiper-wrapper
+      .promo__slide.swiper-slide
+        h2.promo__title Нежный пломбир с&nbsp;клубничным джемом
+        p.promo__text Натуральное мороженое из свежих сливок и молока с вкуснейшим клубничным джемом –&nbsp;это идеальный десерт для всей семьи.
+        .promo__picture
+          +picture( 'promo-jam', 'Нежный пломбир c клубничным джемом', '306', '507')
+      .promo__slide.swiper-slide
+        h2.promo__title Сливочное мороженое со&nbsp;вкусом банана
+        p.promo__text Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день.
+        .promo__picture.promo__picture--secondary
+          +picture( 'promo-banana', 'Сливочное мороженое со вкусом банана', '306', '507')
+      .promo__slide.swiper-slide
+        h2.promo__title Карамельный пломбир с&nbsp;маршмеллоу
+        p.promo__text Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.
+        .promo__picture.promo__picture--tertiary
+          +picture( 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу', '306', '507')
 
-      .promo__swiper-button.swiper-button-prev
-      .promo__swiper-button.swiper-button-next
+    .promo__swiper-button.swiper-button-prev
+    .promo__swiper-button.swiper-button-next
 
-      .promo__pagination.swiper-pagination
+    .promo__pagination.swiper-pagination
 
-      button.button.button--secondary.promo__button Заказать
+    button.button.button--secondary.promo__button Заказать
 
-    .promo__thumbs.swiper(thumbsSlider="")
-      .promo__thumbs-wrapper.swiper-wrapper
-        .promo__thumbs-slide.swiper-slide
-          .promo__thumbs-picture
-            +picture( 'promo-jam', 'Нежный пломбир c клубничным джемом', '66', '150')
-        .promo__thumbs-slide.swiper-slide
-          .promo__thumbs-picture
-            +picture( 'promo-banana', 'Сливочное мороженое со вкусом банана', '66', '150')
-        .promo__thumbs-slide.swiper-slide
-          .promo__thumbs-picture
-            +picture( 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу', '66', '150')
+  .promo__thumbs.swiper(thumbsSlider="")
+    .promo__thumbs-wrapper.swiper-wrapper
+      .promo__thumbs-slide.swiper-slide
+        .promo__thumbs-picture
+          +picture( 'promo-jam', 'Нежный пломбир c клубничным джемом', '66', '150')
+      .promo__thumbs-slide.swiper-slide
+        .promo__thumbs-picture
+          +picture( 'promo-banana', 'Сливочное мороженое со вкусом банана', '66', '150')
+      .promo__thumbs-slide.swiper-slide
+        .promo__thumbs-picture
+          +picture( 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу', '66', '150')

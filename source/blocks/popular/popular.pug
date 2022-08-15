@@ -1,11 +1,34 @@
 section.popular
-  .popular__wrapper
   h3.popular__title Попробуйте самые популярные вкусы нашего мороженого
-  article.popular__article
-    +picture ('', 'Мороженое Малинка')
-    p.popular__text Малинка
-    p.popular__description Сливочное мороженое с малиновым джемом
-    p.popular__price 310 ₽/кг
-    button.button.popular__button
-      span.visually-hidden Положить в корзину
+  .popular__wrapper
+    article.popular__article
+      p.popular__text Малинка
+      +picture ('malinka', 'Мороженое Малинка', '168', '168')
+      p.popular__description Сливочное мороженое с&nbsp;малиновым джемом
+      p.popular__price 310 ₽/кг
+      button.button.popular__button
+        span.visually-hidden Положить в корзину
 
+    article.popular__article
+      p.popular__text Фисташка
+      +picture ('pistachio', 'Мороженое Фисташка', '168', '168')
+      p.popular__description Фисташковый пломбир с&nbsp;кусочками шоколада
+      p.popular__price 340 ₽/кг
+      button.button.popular__button
+        span.visually-hidden Положить в корзину
+
+    article.popular__article
+      p.popular__text Черника
+      +picture ('blueberry', 'Мороженое Черника', '168', '168')
+      p.popular__description Крем-брюле с&nbsp;черничным джемом
+      p.popular__price 330 ₽/кг
+      button.button.popular__button
+        span.visually-hidden Положить в корзину
+
+    article.popular__article
+      p.popular__text Бабл-гам
+      +picture ('bumble-gum', 'Мороженое Бабл-гам', '168', '168')
+      p.popular__description Ванильный пломбир со&nbsp;сладкой посыпкой
+      p.popular__price 320 ₽/кг
+      button.button.popular__button
+        span.visually-hidden Положить в корзину
