@@ -1,34 +1,19 @@
+mixin article(name, descr, price, picture = [])
+  article.popular__article
+    p.popular__text= name
+    +picture(...picture)
+    p.popular__description= descr
+    p.popular__price= price
+    button.button.popular__button
+      span.visually-hidden Положить в корзину
+
 section.popular
   h3.popular__title Попробуйте самые популярные вкусы нашего мороженого
   .popular__wrapper
-    article.popular__article
-      p.popular__text Малинка
-      +picture ('malinka', 'Мороженое Малинка', '168', '168')
-      p.popular__description Сливочное мороженое с&nbsp;малиновым джемом
-      p.popular__price 310 ₽/кг
-      button.button.popular__button
-        span.visually-hidden Положить в корзину
+    +article('Малинка', 'Сливочное мороженое с малиновым джемом', '310 ₽/кг', ['malinka', 'Мороженое Малинка', '168', '168'])
 
-    article.popular__article
-      p.popular__text Фисташка
-      +picture ('pistachio', 'Мороженое Фисташка', '168', '168')
-      p.popular__description Фисташковый пломбир с&nbsp;кусочками шоколада
-      p.popular__price 340 ₽/кг
-      button.button.popular__button
-        span.visually-hidden Положить в корзину
+    +article('Фисташка', 'Фисташковый пломбир с кусочками шоколада', '340 ₽/кг', ['pistachio', 'Мороженое Фисташка', '168', '168'])
 
-    article.popular__article
-      p.popular__text Черника
-      +picture ('blueberry', 'Мороженое Черника', '168', '168')
-      p.popular__description Крем-брюле с&nbsp;черничным джемом
-      p.popular__price 330 ₽/кг
-      button.button.popular__button
-        span.visually-hidden Положить в корзину
+    +article('Черника', 'Фисташковый пломбир с кусочками шоколада', '340 ₽/кг', ['pistachio', 'Мороженое Фисташка', '168', '168'])
 
-    article.popular__article
-      p.popular__text Бабл-гам
-      +picture ('bumble-gum', 'Мороженое Бабл-гам', '168', '168')
-      p.popular__description Ванильный пломбир со&nbsp;сладкой посыпкой
-      p.popular__price 320 ₽/кг
-      button.button.popular__button
-        span.visually-hidden Положить в корзину
+    +article('Бабл-гам', 'Ванильный пломбир со сладкой посыпкой', '320 ₽/кг', ['bumble-gum', 'Мороженое Бабл-гам', '168', '168'])
