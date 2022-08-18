@@ -1,0 +1,52 @@
+.burger
+    position: absolute
+    top: 23px
+    right: $xs
+    z-index: 10
+    display: block
+    width: 20px
+    height: 20px
+    padding: 0
+    background-color: transparent
+    cursor: pointer
+    border: none
+    @media (min-width: $tablet-width)
+        display: none
+
+.burger__inner,
+.burger__inner::before,
+.burger__inner::after
+    display: block
+    position: absolute
+    width: 100%
+    height: 1.5px
+    background-color: $extra-dark
+    transition: 0.3s
+
+.burger__inner
+    top: 10px
+    &::before
+        content: ""
+        top: -10px
+        transition: top 0.3s 0.3s, transform 0.3s
+    &::after
+        content: ""
+        bottom: -10px
+        transition: bottom 0.3s 0.3s, transform 0.3s
+
+.burger__inner.active::before
+    content: ""
+    top: 0px
+    transform: rotate(45deg)
+    transition: top 0.3s, transform 0.3s 0.3s
+
+.burger__inner.active::after
+    content: ""
+    bottom: 0
+    transform: rotate(-45deg)
+    transition: bottom 0.3s, transform 0.3s 0.3s
+
+.burger__inner.active
+    background: fade-out($white, 1)
+    @media (min-width: $tablet-width)
+        display: none

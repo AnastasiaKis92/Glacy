@@ -1,9 +1,6 @@
-.about
-    padding: 1rem $xs
-
 .about__template
     padding: 1rem
-    background-image: url('../images/about-bg.jpg')
+    background-image: url('../images/about-bg.webp')
     border-radius: 16px
 
 .about__wrapper
@@ -26,6 +23,7 @@
     position: relative
     margin: 0
     padding-left: 2.5rem
+    color: $basic-dark
     &::before
         content: ""
         position: absolute
@@ -50,9 +48,6 @@
             mask-image: url("../images/svg-sprites/sprite.svg#icon-temp")
 
 @media (min-width: $tablet-width)
-    .about
-        padding: 1.5rem $xm
-
     .about__template
         padding: 1.5rem
 
@@ -66,8 +61,9 @@
     .about__list
         display: grid
         grid-template-columns: repeat(2, 50%)
+        grid-template-rows: repeat(2, min-content)
         column-gap: 2rem
-        row-gap: 1.6rem
+        row-gap: 2.8rem
 
     .about__item
         & + &
@@ -80,8 +76,5 @@
             height: 48px
 
 @media (min-width: $desktop-width)
-    .about
-        padding: 3.5rem $xl
-
     .about__wrapper
         padding: 3.5rem 2.5rem

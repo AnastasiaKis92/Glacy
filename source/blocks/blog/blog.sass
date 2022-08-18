@@ -1,0 +1,84 @@
+.blog__article
+    display: flex
+    flex-direction: column
+    background-color: $white
+    background-repeat: no-repeat
+    border-radius: 16px
+    & + &
+        margin-top: 1rem
+    &--blog
+        min-height: 137px
+        padding: 1rem
+        background-image: url('../images/blog-bg.webp')
+        background-position: right -3rem center
+        background-size: cover
+        @media (min-width: $mobile-width)
+            background-position: right
+            background-size: contain
+        @media (min-resolution: 2dppx)
+            background-image: url('../images/blog-bg@2x.webp')
+
+    &--subscribe
+        padding: 0.5rem
+        background-image: url('../images/subscribe-bg.webp')
+        // background-position: center
+        // background-size: auto 110%
+        background-size: cover
+        @media (min-resolution: 2dppx)
+            background-image: url('../images/subscribe-bg@2x.webp')
+
+.blog__wrapper
+    padding: 1rem
+    background-color: $white
+    border-radius: 16px
+
+.blog__text
+    width: 75%
+    order: 2
+
+.blog__description
+    margin: 0
+    padding-bottom: 0.75rem
+    color: $basic-dark
+    line-height: 1.25
+    order: 1
+
+.blog__form
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.blog__input
+    margin-bottom: 1rem
+
+@media (min-width: $tablet-width)
+    .blog
+        display: flex
+
+    .blog__article
+        width: 50%
+        & + &
+            margin-top: 0
+            margin-left: 2rem
+        &--blog
+            padding: 2rem
+            background-size: cover
+            background-position: center
+        &--subscribe
+            & .blog__description
+                padding-bottom: 2.6rem
+                line-height: 1.375
+
+    .blog__wrapper
+        padding: 1.5rem
+
+    .blog__text
+        width: 60%
+
+    .blog__form
+        flex-direction: row
+
+    .blog__input
+        margin-bottom: 0
+        margin-right: 1.5rem
+        width: 70%

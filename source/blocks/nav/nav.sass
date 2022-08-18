@@ -1,52 +1,18 @@
 .nav
+    position: absolute
     display: flex
     flex-direction: column
-
-.nav__toggle
-    position: absolute
-    top: 24px
-    right: 20px
-    z-index: 2
-    display: block
-    width: 24px
-    height: 16px
-    padding: 0
-    background-color: transparent
-    cursor: pointer
-    border: none
-
-.nav--opened .nav__toggle
-    top: 21px
-    right: 24px
-    width: 18px
-    height: 18px
-
-    &::before,
-    &::after
-        position: absolute
-        top: 11px
-        right: -3px
-        width: 24px
-        height: 1.5px
-        background-color: $extra-dark
-        content: ""
-
-    &::before
-        transform: rotate(45deg)
-
-    &::after
-        transform: rotate(-45deg)
-
-.nav--closed .nav__toggle
-    &::before
-        position: absolute
-        top: 0px
-        left: 2px
-        width: 19px
-        height: 1.5px
-        background-color: $extra-dark
-        box-shadow: 0 8px 0 0 $extra-dark, 0 16px 0 0 $extra-dark
-        content: ""
+    width: 100%
+    height: auto
+    left: -100%
+    z-index: 10
+    transition-duration: 0.2s
+    &.color
+        background: linear-gradient($light-pink, 30%, $white)
+    &.animate
+        left: 0
+        height: 100vh
+        transition: left 0.3s 0.3s
 
 .nav__list
     display: flex
@@ -58,7 +24,6 @@
 .nav__wrapper
     &--right
         order: 1
-
     &--left
         order: 2
 
@@ -74,20 +39,18 @@
     &--search
         display: none
 
-@media (max-width: $mobile-width-only)
-  .nav--closed .nav__item
-    display: none
-
-  // Скрываем кнопку, если не работает js
-  .nav--nojs .nav__toggle
-    display: none
-
 @media (min-width: $tablet-width)
     .nav
+        position: relative
+        left: 0
         flex-direction: row
         justify-content: space-between
         align-items: center
         width: 100%
+        &.color
+            background: transparent!important
+        &.animate
+            height: auto
 
     .nav__list
         position: relative
@@ -99,12 +62,8 @@
         &--right
             order: 2
 
-    .nav__toggle
-        display: none
-
     .nav__item
         padding-bottom: 0
-
         &--popup
             width: 45%
 

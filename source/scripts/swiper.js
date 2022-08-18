@@ -20,6 +20,9 @@ const swiper = new Swiper('.promo__slider', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+    renderBullet: function () {
+      return '<button class="swiper-pagination-bullet"></button>';
+    },
   },
 
   navigation: {
@@ -29,7 +32,11 @@ const swiper = new Swiper('.promo__slider', {
 });
 
 const colors = ['#FEAFC3', '#69A9FF', '#FCC850'];
+// const classes = document.querySelectorAll('.promo__slide.swiper-slide');
+// console.log(classes.dataset.color);
 
 swiper.on('transitionEnd', function() {
   document.body.style.backgroundColor = colors[this.realIndex];
+  document.body.style.transition = 'background-color 0.3s';
+  document.querySelector('.color').style.background = `linear-gradient(${colors[this.realIndex]}, 30%, white)`;
 });

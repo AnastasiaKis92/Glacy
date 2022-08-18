@@ -40,14 +40,24 @@
 // Swiper
 .promo__slider .swiper-button-prev,
 .promo__slider .swiper-button-next
+    @include reset-btn
     top: 65%
     width: 25px
     height: 25px
     background-color: fade-out($white, 0.7)
     border-radius: 50%
     box-shadow: 0 0 0 2px $white
-    @media (min-width: 540px)
-        top: 60%
+    transition: background-color 0.3s
+    @include focus
+    &:hover
+        background-color: $white
+        transition-duration: 0.1s
+        &::after
+            background-color: $extra-dark
+    &:disabled
+        opacity: 0.3
+    @media (min-width: $mobile-width)
+        top: 62%
 
 .promo__slider .swiper-button-next::after,
 .promo__slider .swiper-button-prev::after
@@ -71,9 +81,6 @@
     display: none
 
 @media (min-width: $tablet-width)
-    .promo
-        padding: 1.5rem $xm
-
     // Swiper
     .promo__slider
         padding-left: 1rem
@@ -129,7 +136,7 @@
     .promo
         display: flex
         min-width: 0
-        padding: 1.5rem $xl
+        padding-top: 1.2rem
 
     // Swiper
     .promo__title
@@ -157,17 +164,6 @@
     .promo__slider
         padding-left: 4.375rem
 
-    // Кнопки
-    .promo__slider .swiper-button-prev,
-    .promo__slider .swiper-button-next
-        &:hover
-            background-color: $white
-            &::after
-                background-color: $extra-dark
-
-        &:active
-            box-shadow: 0 0 0 2px $extra-dark
-
     .promo__slider .swiper-button-next,
     .promo__slider .swiper-rtl .swiper-button-prev
         right: 5%
@@ -175,9 +171,6 @@
     .promo__slider .swiper-button-prev,
     .promo__slider .swiper-rtl .swiper-button-next
         left: 57%
-
-    .promo__slider .swiper-pagination
-        display: block
 
     // Swiper thumbs
     .promo__thumbs
@@ -211,19 +204,21 @@
 
     // Pagination
     .promo__slider .swiper-pagination
+        display: block
         text-align: left
 
-    .swiper-pagination-bullet
+    .promo__slider .swiper-pagination-bullet
         width: 12px
         height: 12px
         background-color: fade-out($white, 0.7)
         opacity: 1
-
-    .swiper-pagination-bullet-active
-        background-color: $white
-
-    .swiper-pagination-clickable .swiper-pagination-bullet
+        outline: none
+        transition: box-shadow 0.3s
         &:hover
             box-shadow: 0 0 0 1px $white
-        &:active
+            transition-duration: 0.1s
+        &:focus
             box-shadow: 0 0 0 1px $extra-dark
+
+    .promo__slider .swiper-pagination-bullet-active
+        background-color: $white
