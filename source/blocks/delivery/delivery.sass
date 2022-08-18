@@ -1,0 +1,46 @@
+.delivery__wrapper
+    padding: 1rem
+    background-color: #F1F0EF
+    border-radius: 16px
+    &.delivery-order
+        background-color: $white
+    & + &
+        margin-top: 1rem
+
+.delivery__title
+    padding-bottom: 1.5rem
+
+.delivery__text
+    margin: 0
+    color: $basic-dark
+
+@media (min-width: $tablet-width)
+    .delivery
+        position: relative
+
+    .delivery__wrapper
+        padding: 2rem
+        & + &
+            margin-top: 0
+        &--delivery
+            display: flex
+            flex-direction: column
+            justify-content: center
+            min-height: 470px
+            background-image: url('../images/delivery-bg.webp')
+            background-size: cover
+            // background-position: right 12rem center
+            background-repeat: no-repeat
+
+    .delivery__title,
+    .delivery__text
+        width: 35%
+
+@media (min-width: $desktop-width)
+    .delivery__wrapper
+        padding-left: 6.25rem
+        &--delivery
+            min-height: 534px
+        &.delivery-order
+            padding: 2.5rem
+

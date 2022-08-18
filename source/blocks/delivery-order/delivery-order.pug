@@ -1,0 +1,13 @@
+.delivery__wrapper.delivery-order
+    p.delivery-order__title Укажите адрес и дату доставки, и мы свяжемся с вами, чтобы подтвердить заказ.
+    form.delivery-order__form(action='https://echo.htmlacademy.ru/' method='post')
+      label.delivery-order__label
+        span.delivery-order__text Дата
+        input.input.delivery-order__input(type='date' name='date' value='01.04.2022' min="2022-01-01" max="2022-12-31" required)
+      label.delivery-order__label
+        span.delivery-order__text Телефон
+        input.input.delivery-order__input(type='tel' name='phone' placeholder='+7 800 999-00-00')
+      label.delivery-order__label
+        span.delivery-order__text Адрес
+        input.input.delivery-order__input(type='address' name='address' placeholder='ул. Большая Конюшенная, 19/8')
+      button.button.delivery-order__button(type='submit') Отправить

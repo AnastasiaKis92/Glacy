@@ -1,0 +1,69 @@
+.delivery-order__title
+    margin: 0
+    padding-bottom: 1rem
+    color: $basic-dark
+
+.delivery-order__form
+    display: flex
+    flex-direction: column
+
+.delivery-order__label
+    display: flex
+    align-items: center
+    & + &
+        padding-top: 1rem
+
+.delivery-order__text
+    width: 30%
+    font-weight: 700
+    line-height: 1.25
+
+.delivery-order__input
+    width: 70%
+    &::-webkit-calendar-picker-indicator
+        display: none
+
+.delivery-order__button
+    align-self: center
+    margin-top: 0.75rem
+
+@media (min-width: $tablet-width)
+    .delivery-order
+        width: 50%
+        position: absolute
+        top: 4rem
+        right: 4rem
+
+    .delivery-order__title
+        padding-bottom: 2rem
+
+    .delivery-order__form
+        display: grid
+        grid-template-columns: 30% auto
+        column-gap: 1rem
+        row-gap: 1.25rem
+
+    .delivery-order__label
+        flex-direction: column
+        align-items: flex-start
+        &:last-of-type
+            grid-column: 1/3
+        & + &
+            padding-top: 0
+
+    .delivery-order__text
+        width: 100%
+        padding-bottom: 0.5rem
+
+    .delivery-order__input
+        width: 100%
+
+    .delivery-order__button
+        grid-column: 1/3
+        justify-self: center
+
+@media (min-width: $desktop-width)
+    .delivery-order
+        width: 37%
+        top: 7rem
+        right: 10rem

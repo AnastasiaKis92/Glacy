@@ -1,0 +1,12 @@
+//- mixin delivery-address (...items)
+//-   form.delivery-address__form(action='https://echo.htmlacademy.ru/' method='post')
+//-     each item in items
+//-       label.delivery-address__label= item.label
+//-         input.input.delivery-address__input&attributes(attributes)
+
+section.delivery.container
+  .delivery__wrapper.delivery__wrapper--delivery
+    h3.delivery__title Доставка любимого мороженого на дом
+    p.delivery__text Хочется полакомиться любимым дессертом, но&nbsp;нет времени съездить в&nbsp;магазин? Закажите доставку мороженого на&nbsp;дом, и&nbsp;курьер привезёт вам ваш заказ в&nbsp;течение часа!
+
+  include /blocks/delivery-order/delivery-order.pug
