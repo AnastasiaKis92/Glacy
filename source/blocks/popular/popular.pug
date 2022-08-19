@@ -1,6 +1,6 @@
 mixin article(name, descr, price, picture = [])
   article.popular__article
-    h5.popular__text= name
+    h4.popular__text= name
     +picture(...picture)
     p.popular__description= descr
     p.popular__price= price

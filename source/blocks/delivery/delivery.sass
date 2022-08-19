@@ -1,6 +1,6 @@
 .delivery__wrapper
     padding: 1rem
-    background-color: #F1F0EF
+    background-color: $bg-gray
     border-radius: 16px
     &.delivery-order
         background-color: $white
@@ -31,6 +31,9 @@
             background-size: cover
             // background-position: right 12rem center
             background-repeat: no-repeat
+            @media (min-resolution: 2dppx)
+                background-image: url('../images/delivery-bg@2x.webp')
+
 
     .delivery__title,
     .delivery__text

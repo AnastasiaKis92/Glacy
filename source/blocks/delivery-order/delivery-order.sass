@@ -10,11 +10,24 @@
 .delivery-order__label
     display: flex
     align-items: center
+    justify-content: space-between
     & + &
         padding-top: 1rem
+    &:nth-of-type(2n + 1) .delivery-order__text::after
+        content: ""
+        position: absolute
+        top: 4px
+        right: -16px
+        width: 13px
+        height: 13px
+        background-color: $extra-dark
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-info")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: cover
 
 .delivery-order__text
-    width: 30%
+    position: relative
     font-weight: 700
     line-height: 1.25
 
@@ -39,7 +52,7 @@
 
     .delivery-order__form
         display: grid
-        grid-template-columns: 30% auto
+        grid-template-columns: 35% auto
         column-gap: 1rem
         row-gap: 1.25rem
 
@@ -52,7 +65,6 @@
             padding-top: 0
 
     .delivery-order__text
-        width: 100%
         padding-bottom: 0.5rem
 
     .delivery-order__input
