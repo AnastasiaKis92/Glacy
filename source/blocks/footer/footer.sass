@@ -1,0 +1,37 @@
+.footer__wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.footer__html
+    position: relative
+    display: block
+    width: 93px
+    height: 26px
+    border-radius: 26px
+    @include focus
+    &:hover
+        opacity: 0.5
+        transition: 0.1s
+    &::after
+        content: ''
+        @include align-left
+        top: 0
+        right: 0
+        width: 93px
+        height: 26px
+        background-color: $extra-dark
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-html")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: cover
+
+@media (min-width: $tablet-width)
+    .footer__wrapper
+        flex-direction: row
+        align-items: flex-start
+        justify-content: space-between
+
+@media (min-width: $desktop-width)
+    .footer.container
+        padding-top: 1rem

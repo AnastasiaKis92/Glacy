@@ -1,0 +1,42 @@
+.docs__list
+    @include reset-list
+
+.docs__item
+    @include font(0.875rem, calc(20/14))
+    & + &
+        margin-top: 0.5rem
+    &--contractor
+        position: relative
+        font-weight: 700
+        &::before
+            content: ''
+            position: absolute
+            top: 2px
+            right: 0
+            width: 16px
+            height: 16px
+            background-color: $extra-dark
+            mask-image: url("../images/svg-sprites/sprite.svg#icon-heart")
+            mask-repeat: no-repeat
+            mask-position: center
+            mask-size: cover
+
+.docs__link
+    padding: 0.25rem 1rem
+    background-color: 0.3s
+    border-radius: 26px
+    @include link
+
+@media (min-width: $tablet-width)
+    .docs__list
+        display: grid
+        grid-template-columns: auto auto
+        grid-template-rows: repeat(2, min-content)
+        row-gap: 0.5rem
+
+    .docs__item
+        padding-left: 1.5rem
+        & + &
+            margin-top: 0
+        &--contractor::before
+            left: 0

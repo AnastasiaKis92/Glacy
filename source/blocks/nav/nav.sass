@@ -36,6 +36,8 @@
         max-width: 25rem
 
 .nav__link
+    transition: background-color 0.3s
+    @include link
     &--search
         display: none
 
@@ -116,9 +118,6 @@
             width: 11%
 
     .nav__link
-        transition: background-color 0.3s
-        @include link
-
         &--search
             position: relative
             display: block

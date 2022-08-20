@@ -1,7 +1,6 @@
 .tel
     margin: 0.8rem 2.8rem 0 0
-    @include Inter-700
-
+    font-weight: 700
     &--desktop
         display: none
 
@@ -19,5 +18,8 @@
             margin: 0
             padding: calc(6rem / 16) 1rem
             border-radius: 26px
-            transition: background-color 0.3s
-            @include link
+            transition: color 0.3s
+            &:hover
+                color: $bright-pink
+                background-color: transparent
+
