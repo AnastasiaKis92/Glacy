@@ -1,0 +1,13 @@
+.popup.popup-login__wrapper
+  button.popup__close-button(type='button')
+    span.visually-hidden Закрыть окно
+  p.popup-login__title Личный кабинет
+  form.popup-login__form(action='https://echo.htmlacademy.ru/' method='post')
+    input.input.popup-login__input(type='email' name='e-mail' placeholder='email@example.com')
+    input.input.popup-login__input(type='password' name='password' placeholder='Пароль')
+    button.button.popup-login__button(type='submit') Войти
+    ul.popup-login__list
+      +listItem( 'popup-login__item', 'popup-login__link',
+        {href: '#', text: 'Забыли пароль?'},
+        {href: '#', text: 'Регистрация'}
+        )

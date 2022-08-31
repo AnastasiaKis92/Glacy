@@ -1,3 +1,4 @@
 import '../blocks/burger/burger.js';
-import './popup.js';
+import '../blocks/popup/popup.js';
 import './swiper.js';
+import './validation.js';

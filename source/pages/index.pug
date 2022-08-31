@@ -1,4 +1,11 @@
 extends /blocks/layout/layout
 
+block head
+ -
+  const pageTitle = 'Glacy'
+  const pageDescription = 'Сайт о мороженом'
+
 block content
   include /blocks/main-page/main-page
+  include /blocks/popup-login/popup-login.pug
+  include /blocks/popup-cart/popup-cart.pug

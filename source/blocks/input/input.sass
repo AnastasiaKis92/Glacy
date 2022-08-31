@@ -5,10 +5,12 @@
     color: $extra-dark
     border: 1px solid $gray
     border-radius: 4px
-
     &:focus
         border-color: $extra-dark
+        box-shadow: 0 0 0 1px $extra-dark
         outline: none
-
     &::placeholder
         color: $gray
+
+.invalid
+    border-color: $error

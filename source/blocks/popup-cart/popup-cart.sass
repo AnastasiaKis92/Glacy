@@ -1,107 +1,117 @@
-.popup-cart__wrapper
-    display: none
+.popup-cart__title
+    margin: 0
+    padding-bottom: 1rem
+    font-weight: 700
+    @include font(1.125rem, calc(24 / 18))
 
-    &.active
-        display: block
+.popup-cart__list
+    @include reset-list
+    margin-bottom: 1rem
+    padding-bottom: 1rem
+    border-bottom: 1px solid $light-gray
+
+.popup-cart__item
+    display: grid
+    grid-template-columns: 46px auto 1fr 42px
+    column-gap: 1rem
+    & + &
+        padding-top: 1.5rem
+
+.popup-cart__img
+    width: 46px
+    height: 46px
+    padding-right: 1rem
+    box-sizing: content-box
+
+.popup-cart__cart
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.popup-cart__name
+    margin: 0
+    font-weight: 700
+    @include font(1rem, calc(16 / 20))
+
+.popup-cart__features
+    margin: 0
+    padding-top: 0.5rem
+    @include font(0.875rem, 0.7)
+    color: $gray
+
+.popup-cart__price
+    align-self: center
+    margin: 0
+    margin-left: auto
+    font-weight: 700
+    @include font(1rem, calc(16 / 20))
+
+.popup-cart__button
+    position: relative
+    align-self: center
+    justify-self: right
+    @include reset-btn
+    width: 25px
+    height: 25px
+    opacity: 0.5
+    &::after
+        position: absolute
+        content: ""
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 9px
+        height: 9px
+        background-color: $extra-dark
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-cross")
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: cover
+    &:hover,
+    &:active,
+    &:focus
+        opacity: 1
+
+.popup-cart__order-container
+    display: flex
+    flex-direction: column
+
+.popup-cart__order-button
+    order: 2
+    align-self: center
+
+.popup-cart__total
+    order: 1
+    align-self: center
+    padding-bottom: 1rem
+    font-weight: 700
+    @include font(0.875rem, 0.7)
 
 @media (min-width: $tablet-width)
-    .popup-cart
-        position: relative
-
     .popup-cart__wrapper
-        position: absolute
-        right: 0
-        width: 33vw
-        min-width: 441px
-        margin-top: 1rem
-        padding: 3rem
-        background-color: $white
-        border-radius: 4px
-        z-index: 30
+        &.active
+            right: 33px
 
     .popup-cart__title
-        margin: 0
         padding-bottom: 2rem
-        @include Inter-700
         @include font(1.5rem, calc(24 / 30))
 
     .popup-cart__list
-        @include reset-list
         margin-bottom: 2rem
         padding-bottom: 2rem
-        border-bottom: 1px solid $light-gray
-
-    .popup-cart__item
-        display: grid
-        grid-template-columns: 46px auto 1fr 42px
-        column-gap: 1rem
-        & + &
-            padding-top: 1.5rem
-
-    .popup-cart__img
-        width: 46px
-        height: 46px
-        padding-right: 1rem
-        box-sizing: content-box
-
-    .popup-cart__cart
-        display: flex
-        flex-direction: column
-        justify-content: center
-
-    .popup-cart__name
-        margin: 0
-        @include Inter-700
-        @include font(1.125rem, calc(18 / 22))
-
-    .popup-cart__features
-        margin: 0
-        padding-top: 0.5rem
-        @include Inter-400
-        @include font(0.875rem, 0.7)
-        color: $gray
-
-    .popup-cart__price
-        margin-left: auto
-        @include Inter-700
-        @include font(1.125rem, calc(18 / 22))
-
-    .popup-cart__button
-        position: relative
-        align-self: center
-        @include reset-btn
-        width: 25px
-        height: 25px
-        opacity: 0.5
-        &::after
-            position: absolute
-            content: ""
-            top: 50%
-            left: 50%
-            transform: translate(-50%, -50%)
-            width: 9px
-            height: 9px
-            background-color: $extra-dark
-            mask-image: url("../images/svg-sprites/sprite.svg#icon-cross")
-            mask-repeat: no-repeat
-            mask-position: center
-            mask-size: cover
-
-        &:hover,
-        &:active,
-        &:focus
-            opacity: 1
 
     .popup-cart__order-container
         display: flex
+        flex-direction: row
         justify-content: space-between
         align-items: center
 
     .popup-cart__total
+        order: 3
         padding-left: 2rem
-        @include Inter-700
-        @include font(1.125rem, calc(18 / 22))
+        padding-bottom: 0
 
 @media (min-width: $desktop-width)
     .popup-cart__wrapper
-        margin-top: 0.5rem
+        &.active
+            right: 100px

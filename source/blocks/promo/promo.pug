@@ -3,12 +3,12 @@ section.promo.container
 
   .promo__slider.swiper
     .promo__slider-wrapper.swiper-wrapper
-      .promo__slide.swiper-slide(data-color='#FEAFC3')
+      .promo__slide.swiper-slide#slider(data-color='#69A9FF')
         h2.promo__title Нежный пломбир с&nbsp;клубничным джемом
         p.promo__text Натуральное мороженое из свежих сливок и молока с вкуснейшим клубничным джемом –&nbsp;это идеальный десерт для всей семьи.
         .promo__picture
           +picture( 'promo-jam', 'Нежный пломбир c клубничным джемом', '306', '507')
-      .promo__slide.swiper-slide(data-color='#69A9FF')
+      .promo__slide.swiper-slide(data-color='#FCC850')
         h2.promo__title Сливочное мороженое со&nbsp;вкусом банана
         p.promo__text Сливочное мороженое с ярким банановым вкусом подарит вам свежесть и наслаждение даже в самый жаркий летний день.
         .promo__picture.promo__picture--secondary
@@ -20,11 +20,13 @@ section.promo.container
           +picture( 'promo-marshmellow', 'Карамельный пломбир с маршмеллоу', '306', '507')
 
     button.promo__swiper-button.swiper-button-prev
+      span.visually-hidden Предыдущий слайд
     button.promo__swiper-button.swiper-button-next
+      span.visually-hidden Последующий слайд
 
     .promo__pagination.swiper-pagination
 
-    button.button.button--secondary.promo__button Заказать
+    button.button.button--secondary.promo__button(type='button') Заказать
 
   .promo__thumbs.swiper(thumbsSlider="")
     .promo__thumbs-wrapper.swiper-wrapper

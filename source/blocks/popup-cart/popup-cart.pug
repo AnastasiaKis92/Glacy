@@ -1,0 +1,26 @@
+.popup.popup-cart__wrapper
+  button.popup__close-button(type='button')
+    span.visually-hidden Закрыть окно
+  p.popup-cart__title Корзина
+    ul.popup-cart__list
+      li.popup-cart__item
+        +picture ( 'malinka', 'Мороженое Малинка.', '46', '46' )
+        .popup-cart__cart
+          p.popup-cart__name Малинка
+          p.popup-cart__features 1 кг х 310 ₽
+        p.popup-cart__price 310 ₽
+        button.popup-cart__button(type='button')
+          span.visually-hidden Удалить позицию
+
+      li.popup-cart__item
+        +picture ( 'bumble-gum', 'Мороженое Бабл-гам.', '46', '46' )
+        .popup-cart__cart
+          p.popup-cart__name Бабл-гам
+          p.popup-cart__features 1,5 кг х 320 ₽
+        p.popup-cart__price 480 ₽
+        button.popup-cart__button(type='button')
+          span.visually-hidden Удалить позицию
+
+    .popup-cart__order-container
+      button.button.popup-cart__order-button(type='submit') Оформить заказ
+      span.popup-cart__total Итого: 790 ₽

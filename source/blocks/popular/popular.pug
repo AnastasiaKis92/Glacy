@@ -4,7 +4,7 @@ mixin article(name, descr, price, picture = [])
     +picture(...picture)
     p.popular__description= descr
     p.popular__price= price
-    button.button.popular__button
+    button.button.popular__button(type='button')
       span.visually-hidden Положить в корзину
 
 section.popular.container

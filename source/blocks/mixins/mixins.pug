@@ -1,18 +1,8 @@
-//- -
-//-   const classes = (className, mod) => {
-//-     const classList = [className];
-//-         if (mod) {
-//-           classList.push(`${className}--${mod}`)
-//-         }
-//-   }
-
 mixin listItem ( className = [], classNameLink, ...items )
   each item in items
     li(class= className)
       if(item.text)
         a(class= classNameLink, href= item.href)= item.text
-      //- else
-      //-   span.visually-hidden= item.hidden
 
 mixin picture ( imgName, alt, width, height )
   picture

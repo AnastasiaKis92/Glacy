@@ -1,29 +1,41 @@
-.popup-login__wrapper
-    display: none
+.popup-login__title
+    display: block
+    margin: 0
+    padding-bottom: 1rem
+    font-weight: 700
+    @include font(1.125rem, calc(24 / 18))
 
-    &.active
-        display: block
+.popup-login__form
+    display: flex
+    flex-direction: column
+
+.popup-login__button
+    align-self: center
+    margin-top: 1rem
+
+.popup-login__list
+    @include reset-list
+    margin-top: 1rem
+
+.popup-login__item
+    @include font(0.875rem, 0.7)
+    & + &
+        padding-top: 0.6rem
+
+.popup-login__link
+    text-decoration: underline
+
+.popup-login__input
+    & + &
+        margin-top: 1rem
 
 @media (min-width: $tablet-width)
-    .popup-login
-        position: relative
-
     .popup-login__wrapper
-        position: absolute
-        right: 15%
-        width: 30vw
-        min-width: 420px
-        margin-top: 1rem
-        padding: 3rem
-        background-color: $white
-        border-radius: 4px
-        z-index: 30
+        &.active
+            right: 180px
 
     .popup-login__title
-        display: block
-        margin: 0
         padding-bottom: 2rem
-        @include Inter-700
         @include font(1.5rem, calc(24 / 30))
 
     .popup-login__form
@@ -35,23 +47,13 @@
     .popup-login__input
         grid-column: 1 / -1
         width: 100%
-
-        &:last-of-type
-            margin-bottom: 1rem
+        & + &
+            margin-top: 0
 
     .popup-login__list
         align-self: center
-        @include reset-list
-
-    .popup-login__item
-        @include font(0.875rem, 0.7)
-        & + &
-            padding-top: 0.6rem
-
-    .popup-login__link
-        text-decoration: underline
 
 @media (min-width: $desktop-width)
     .popup-login__wrapper
-        margin-top: 0.5rem
-
+        &.active
+            right: 230px

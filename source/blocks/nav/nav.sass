@@ -3,7 +3,7 @@
     display: flex
     flex-direction: column
     width: 100%
-    height: auto
+    height: 100vh
     left: -100%
     z-index: 10
     transition-duration: 0.2s
@@ -30,12 +30,13 @@
 .nav__item
     @include font(1rem, calc(20/16))
     padding-bottom: 1rem
-
     &--popup
         width: calc( 100% -  2 * $xs)
         max-width: 25rem
 
 .nav__link
+    padding: calc(6rem / 16) 1rem
+    border-radius: 26px
     transition: background-color 0.3s
     @include link
     &--search
@@ -49,6 +50,7 @@
         justify-content: space-between
         align-items: center
         width: 100%
+        height: auto
         &.color
             background: transparent!important
         &.animate
@@ -77,12 +79,10 @@
 
     .nav__link
         display: block
-        padding: calc(6rem / 16) 1rem
         text-align: center
-        border-radius: 26px
-
         &--login,
         &--cart
+            position: relative
             background-color: fade-out($white, 0.7)
             &::after
                 position: absolute

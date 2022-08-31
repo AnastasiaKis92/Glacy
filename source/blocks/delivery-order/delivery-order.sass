@@ -8,6 +8,7 @@
     flex-direction: column
 
 .delivery-order__label
+    position: relative
     display: flex
     align-items: center
     justify-content: space-between
@@ -33,8 +34,14 @@
 
 .delivery-order__input
     width: 70%
-    &::-webkit-calendar-picker-indicator
-        display: none
+
+.delivery-order__input-error
+    position: absolute
+    bottom: -15px
+    right: 0
+    color: $error
+    display: none
+    @include font(0.75rem, calc(14 / 12))
 
 .delivery-order__button
     align-self: center
@@ -69,6 +76,9 @@
 
     .delivery-order__input
         width: 100%
+
+    .delivery-order__input-error
+        bottom: -20px
 
     .delivery-order__button
         grid-column: 1/3
