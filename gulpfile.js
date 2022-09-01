@@ -19,9 +19,12 @@ import htmlmin from 'gulp-htmlmin';
 import gcmq from 'gulp-group-css-media-queries';
 import critical from 'critical';
 import webpackStream from 'webpack-stream';
+import ghpages from 'gh-pages';
+
+// Заливка на git hub pages
+export const pages = (cb) => ghpages.publish('./build', cb);
 
 // Scripts
-
 export const script = () => gulp.src('source/scripts/main.js')
   .pipe(webpackStream({
     mode: 'none',
@@ -52,7 +55,7 @@ export const criticalCSS = (done) => {
     critical.generate({
       base: './build/',
       src: `${page}.html`,
-      css: [ 'css/styles.css' ],
+      css: [ 'css/styles.min.css' ],
       target: {
         css: `css/${page}-critical.css`,
         uncritical: `css/${page}-async.css`
