@@ -3,7 +3,7 @@
     margin: 0
     padding-bottom: 1rem
     font-weight: 700
-    @include font(1.125rem, calc(24 / 18))
+    +font(1.125rem, calc(24 / 18))
 
 .popup-login__form
     display: flex
@@ -14,11 +14,11 @@
     margin-top: 1rem
 
 .popup-login__list
-    @include reset-list
+    +reset-list
     margin-top: 1rem
 
 .popup-login__item
-    @include font(0.875rem, 0.7)
+    +font(0.875rem, 0.7)
     & + &
         padding-top: 0.6rem
 
@@ -36,7 +36,7 @@
 
     .popup-login__title
         padding-bottom: 2rem
-        @include font(1.5rem, calc(24 / 30))
+        +font(1.5rem, calc(24 / 30))
 
     .popup-login__form
         display: grid

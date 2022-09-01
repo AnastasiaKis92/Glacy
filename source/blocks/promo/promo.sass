@@ -11,7 +11,7 @@
 
     &::after
         content: ""
-        @include align-center
+        +align-center
         width: 150px
         height: 150px
         background-color: $extra-light-pink
@@ -29,7 +29,7 @@
 .promo__text
     margin: 0
     padding: 1rem 0 1.5rem
-    @include font(1.125rem, calc(24 / 18))
+    +font(1.125rem, calc(24 / 18))
     text-align: center
 
 .promo__button
@@ -40,7 +40,7 @@
 // Swiper
 .promo__slider .swiper-button-prev,
 .promo__slider .swiper-button-next
-    @include reset-btn
+    +reset-btn
     top: 65%
     width: 25px
     height: 25px
@@ -48,7 +48,7 @@
     border-radius: 50%
     box-shadow: 0 0 0 2px $white
     transition: background-color 0.3s
-    @include focus
+    +focus
     &:hover
         background-color: $white
         transition-duration: 0.1s
@@ -74,9 +74,7 @@
 .promo__slider .swiper-button-prev::after
     transform: translateX(-1px) rotate(180deg)
 
-.promo__slider .swiper-pagination
-    display: none
-
+.promo__slider .swiper-pagination,
 .promo__thumbs
     display: none
 
@@ -192,7 +190,7 @@
             object-fit: cover
         &::after
             content: ""
-            @include align-center
+            +align-center
             width: 100px
             height: 100px
             background-color: $extra-light-pink

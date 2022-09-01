@@ -4,6 +4,7 @@
     color: $basic-dark
 
 .delivery-order__form
+    position: relative
     display: flex
     flex-direction: column
 
@@ -36,12 +37,12 @@
     width: 70%
 
 .delivery-order__input-error
-    position: absolute
-    bottom: -15px
-    right: 0
-    color: $error
     display: none
-    @include font(0.75rem, calc(14 / 12))
+    position: absolute
+    bottom: 46%
+    left: 30%
+    color: $error
+    +font(0.7rem, calc(14 / 12))
 
 .delivery-order__button
     align-self: center
@@ -78,7 +79,9 @@
         width: 100%
 
     .delivery-order__input-error
-        bottom: -20px
+        left: 39%
+        bottom: 62%
+        +font(0.875rem, calc(18 / 14))
 
     .delivery-order__button
         grid-column: 1/3

@@ -27,7 +27,7 @@ export const pages = (cb) => ghpages.publish('./build', cb);
 // Scripts
 export const script = () => gulp.src('source/scripts/main.js')
   .pipe(webpackStream({
-    mode: 'none',
+    mode: 'production',
     output: {
       filename: 'main.js',
     },

@@ -1,9 +1,9 @@
 .docs__list
-    @include reset-list
+    +reset-list
     padding-bottom: 1rem
 
 .docs__item
-    @include font(0.875rem, calc(20/14))
+    +font(0.875rem, calc(20/14))
     & + &
         margin-top: 0.5rem
     &--contractor
@@ -26,7 +26,7 @@
     padding: 0.25rem 1rem
     background-color: 0.3s
     border-radius: 26px
-    @include link
+    +link
 
 @media (min-width: $tablet-width)
     .docs__list
