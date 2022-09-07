@@ -21,7 +21,7 @@ const swiper = new Swiper('.promo__slider', {
     el: '.swiper-pagination',
     clickable: true,
     renderBullet: function () {
-      return '<button class="swiper-pagination-bullet"></button>';
+      return '<button class="swiper-pagination-bullet"><span class="visually-hidden">Кнопка Пролистать слайдер</span></button>';
     },
   },
 
