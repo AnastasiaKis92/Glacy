@@ -47,13 +47,14 @@
     background-color: fade-out($white, 0.7)
     border-radius: 50%
     box-shadow: 0 0 0 2px $white
-    transition: background-color 0.3s
+    transition: background-color 0.1s
     +focus
     &:hover
         background-color: $white
-        transition-duration: 0.1s
+        transition: 0.3s
         &::after
             background-color: $extra-dark
+            transition: 0.3s
     &:disabled
         opacity: 0.3
     @media (min-width: $mobile-width)
@@ -70,6 +71,7 @@
     mask-repeat: no-repeat
     mask-position: center
     mask-size: cover
+    transition: 0.1s
 
 .promo__slider .swiper-button-prev::after
     transform: translateX(-1px) rotate(180deg)
@@ -154,7 +156,6 @@
         & img
             width: 306px
             height: auto
-
         &::after
             width: 312px
             height: 312px
@@ -211,10 +212,10 @@
         background-color: fade-out($white, 0.7)
         opacity: 1
         outline: none
-        transition: box-shadow 0.3s
+        transition: box-shadow 0.1s
         &:hover
             box-shadow: 0 0 0 1px $white
-            transition-duration: 0.1s
+            transition: 0.3s
         &:focus
             box-shadow: 0 0 0 1px $extra-dark
 
