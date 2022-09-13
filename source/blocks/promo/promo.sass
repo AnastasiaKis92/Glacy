@@ -8,7 +8,6 @@
     & img
         width: 120px
         height: auto
-
     &::after
         content: ""
         +align-center
@@ -17,11 +16,9 @@
         background-color: $extra-light-pink
         border-radius: 50%
         z-index: -1
-
     &--secondary
         &::after
             background-color: $blue
-
     &--tertiary
         &::after
             background-color: $yellow
@@ -38,10 +35,14 @@
     z-index: 2
 
 // Swiper
-.promo__slider .swiper-button-prev,
-.promo__slider .swiper-button-next
+.swiper
+    max-width: 320px
+    height: 200px
+
+.swiper-button-prev,
+.swiper-button-next
     +reset-btn
-    top: 65%
+    top: 55%
     width: 25px
     height: 25px
     background-color: fade-out($white, 0.7)
@@ -57,11 +58,15 @@
             transition: 0.3s
     &:disabled
         opacity: 0.3
-    @media (min-width: $mobile-width)
-        top: 62%
 
-.promo__slider .swiper-button-next::after,
-.promo__slider .swiper-button-prev::after
+.swiper-button-prev
+    left: 23%
+
+.swiper-button-next
+    right: 23%
+
+.swiper-button-next::after,
+.swiper-button-prev::after
     content: ""
     background-color: $white
     width: 6px
@@ -73,118 +78,89 @@
     mask-size: cover
     transition: 0.1s
 
-.promo__slider .swiper-button-prev::after
+.swiper-button-prev::after
     transform: translateX(-1px) rotate(180deg)
 
-.promo__slider .swiper-pagination,
-.promo__thumbs
+.swiper-pagination
     display: none
 
 @media (min-width: $tablet-width)
-    // Swiper
-    .promo__slider
-        padding-left: 1rem
-
-    .promo__slider .swiper-slide
+    .promo
         display: grid
-        grid-template-columns: 48% auto
-        grid-template-rows: auto 1fr
+        grid-template-columns: 60% auto
+        grid-template-rows: 1fr min-content 1fr
+        column-gap: 1rem
 
+    .promo__title,
+    .promo__text
+        grid-column: 1 / 2
+
+    .promo__title
+        grid-row: 1 / 2
+        align-self: end
+        width: 85%
+        padding-top: 2.8rem
+
+    .promo__text
+        grid-row: 2 / 3
+        padding: 1.5rem 0 3rem
+        text-align: left
+        align-self: start
+
+    .promo__button
+        grid-row: 3 / 4
+        margin: 0
+        align-self: start
+        justify-self: left
+
+    // Swiper
+    .swiper
+        grid-column: 2 / 3
+        grid-row: 1 / 4
+        justify-self: center
+        align-self: center
+        max-width: 400px
+        height: 335px
+
+    .swiper-wrapper
+        align-items: center
+
+    .swiper-slide .promo__picture
+        & img
+            width: 200px
+            height: auto
+        &::after
+            width: 210px
+            height: 210px
+
+    // Buttons on slider
     .promo__slider .swiper-button-next,
     .promo__slider .swiper-button-prev
         top: 50%
         width: 38px
         height: 38px
 
-    .promo__slider .swiper-button-prev,
-    .promo__slider .swiper-rtl .swiper-button-next
-        left: 50%
-        right: auto
+    .promo__slider .swiper-button-prev
+        left: 19%
 
-    .promo__title,
-    .promo__text
-        grid-column: 1 / 2
-        grid-row: 1 / 2
-
-    .promo__text
-        padding: 1.5rem 0 3rem
-        text-align: left
-        grid-row: 2 / 3
-
-    .promo__title
-        align-self: end
-        width: 85%
-        padding-top: 2.8rem
-
-    .promo__picture
-        grid-column: 2 / 3
-        grid-row: 1 / 3
-        justify-self: center
-        & img
-            width: 200px
-            height: auto
-
-        &::after
-            width: 210px
-            height: 210px
-
-    .promo__button
-        position: absolute
-        bottom: 15%
+    .promo__slider .swiper-button-next
+        right: 19%
 
 @media (min-width: $desktop-width)
     .promo
-        display: flex
-        min-width: 0
+        grid-template-columns: 1fr 640px
+        align-items: center
         padding-top: 1.2rem
 
     // Swiper
-    .promo__title
-        width: 105%
-        align-self: center
-        padding-top: 7rem
-        padding-bottom: 1.5rem
+    .swiper
+        max-width: 650px
+        height: 507px
 
-    .promo__text
-        align-self: start
-        padding: 0
+    .swiper-slide
+        height: auto
 
-    .promo__button
-        bottom: 22%
-
-    .promo__picture
-        & img
-            width: 306px
-            height: auto
-        &::after
-            width: 312px
-            height: 312px
-
-    .promo__slider
-        padding-left: 4.375rem
-
-    .promo__slider .swiper-button-next,
-    .promo__slider .swiper-rtl .swiper-button-prev
-        right: 5%
-
-    .promo__slider .swiper-button-prev,
-    .promo__slider .swiper-rtl .swiper-button-next
-        left: 57%
-
-    // Swiper thumbs
-    .promo__thumbs
-        display: flex
-        align-self: center
-        width: 100%
-
-    .promo__thumbs-slide
-        width: 100px !important
-        margin-right: 2rem
-
-    .promo__thumbs-picture
-        display: flex
-        justify-content: center
-        opacity: 0.4
+    .swiper-slide .promo__picture
         & img
             width: 66px
             height: 150px
@@ -194,21 +170,46 @@
             +align-center
             width: 100px
             height: 100px
-            background-color: $extra-light-pink
             border-radius: 50%
             z-index: -1
 
-    .swiper-slide-thumb-active
-        display: none
+    .swiper-slide:not(.swiper-slide-active)
+        opacity: 0.4
+        & .promo__picture::after
+            background-color: $extra-light-pink
+
+    .swiper-slide-next + .swiper-slide-duplicate-prev
+        margin-left: -95px // Уменьшает рас-ние м/у миниатюрами
+
+    .swiper-slide-active
+        width: 365px!important
+
+    .swiper-slide-active .promo__picture
+        & img
+            width: 306px
+            height: 507px
+            transition: height 0.3s
+            object-fit: cover
+        &::after
+            width: 312px
+            height: 312px
+
+    // Buttons on slider
+    .promo__slider .swiper-button-prev
+        left: 1%
+
+    .promo__slider .swiper-button-next
+        left: 49%
 
     // Pagination
-    .promo__slider .swiper-pagination
+    .swiper-pagination
         display: block
         text-align: left
+        position: relative
 
-    .promo__slider .swiper-pagination-bullet
-        width: 12px
-        height: 12px
+    .swiper-pagination-bullet
+        width: 15px
+        height: 15px
         background-color: fade-out($white, 0.7)
         opacity: 1
         outline: none
@@ -219,5 +220,5 @@
         &:focus
             box-shadow: 0 0 0 1px $extra-dark
 
-    .promo__slider .swiper-pagination-bullet-active
+    .swiper-pagination-bullet-active
         background-color: $white

@@ -1,9 +1,11 @@
 footer.footer.container
-  .footer__wrapper
-    section.footer__docs.docs
-      h3.visually-hidden Наши документы
-      include /blocks/docs/docs.pug
-
-    .footer__logo
-      a.footer__html(href='#')
-        span.visually-hidden Логотип HTML Academy
+  section.footer__docs.docs
+    h3.visually-hidden Наши документы
+    ul.docs__list
+      +listItem ( ['docs__item', 'docs__item--contractor'], 'docs__link',
+      { href: '#', text: 'Для поставщиков'} )
+      +listItem ( 'docs__item', 'docs__link',
+      { href: '#', text: 'Наши документы'},
+      { href: '#', text: 'О производстве'},
+      { href: '#', text: 'Экологические стандарты'}
+      )
