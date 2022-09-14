@@ -48,16 +48,6 @@
     background-color: fade-out($white, 0.7)
     border-radius: 50%
     box-shadow: 0 0 0 2px $white
-    transition: background-color 0.1s
-    +focus
-    &:hover
-        background-color: $white
-        transition: 0.3s
-        &::after
-            background-color: $extra-dark
-            transition: 0.3s
-    &:disabled
-        opacity: 0.3
 
 .swiper-button-prev
     left: 23%
@@ -201,6 +191,19 @@
     .promo__slider .swiper-button-next
         left: 49%
 
+    .promo__slider .swiper-button-prev,
+    .promo__slider .swiper-button-next
+        transition: background-color 0.1s
+        +focus
+        &:hover
+            background-color: $white
+            transition: background-color 0.3s
+            &::after
+                background-color: $extra-dark
+                transition: background-color 0.3s
+        &:disabled
+            opacity: 0.3
+
     // Pagination
     .swiper-pagination
         display: block
@@ -216,7 +219,7 @@
         transition: box-shadow 0.1s
         &:hover
             box-shadow: 0 0 0 1px $white
-            transition: 0.3s
+            transition: box-shadow 0.3s
         &:focus
             box-shadow: 0 0 0 1px $extra-dark
 

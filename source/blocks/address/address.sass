@@ -8,17 +8,10 @@
 
 .address__title,
 .address__tel
+    align-self: start
     margin: 0
     +font(1.25rem, calc(24/20))
     font-weight: 700
-
-.address__tel
-    align-self: start
-    transition: color 0.1s
-    &:hover
-        color: $bright-pink
-        background-color: transparent
-        transition: 0.3s
 
 .address__title
     padding-bottom: 1rem
@@ -62,3 +55,10 @@
 
     .address__wrapper
         width: 33%
+
+    .address__tel
+        transition: color 0.1s
+        &:hover
+            color: $bright-pink
+            background-color: transparent
+            transition: color 0.3s

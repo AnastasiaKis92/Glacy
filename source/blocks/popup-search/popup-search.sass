@@ -14,8 +14,6 @@
     opacity: 0.5
     +align-top
     +reset-btn
-    +focus
-
     &::after
         position: absolute
         content: ""
@@ -28,11 +26,6 @@
         mask-repeat: no-repeat
         mask-position: center
         mask-size: contain
-
-    &:hover,
-    &:active,
-    &:focus
-        opacity: 1
 
 @media (min-width: $desktop-width)
     .popup-search__wrapper
@@ -50,3 +43,12 @@
 
     .popup-search__input
         width: 100%
+
+    .popup-search__button
+        transition: opacity 0.1s
+        +focus
+        &:hover,
+        &:active,
+        &:focus
+            opacity: 1
+            transition: opacity 0.3s

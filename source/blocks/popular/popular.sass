@@ -60,16 +60,6 @@
         mask-position: center
         mask-size: cover
 
-    &:enabled:hover
-        box-shadow: 0 0 0 2px $bright-pink
-        &::after
-            background-color: $extra-dark
-
-    &:disabled
-        box-shadow: none
-        &::after
-            background-color: $basic-dark
-
 @media (min-width: $tablet-width)
     .popular__wrapper
         display: grid
@@ -123,3 +113,14 @@
     .popular__price,
     .popular__button
         grid-row: 4/5
+
+    .popular__button
+        &:enabled:hover
+            box-shadow: 0 0 0 2px $bright-pink
+            &::after
+                background-color: $extra-dark
+
+        &:disabled
+            box-shadow: none
+            &::after
+                background-color: $basic-dark

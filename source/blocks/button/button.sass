@@ -1,46 +1,50 @@
 .button
     +reset-btn
     padding: 0.75rem 2rem
+    margin-bottom: 0.25rem
     +Inter-700
     +font(1rem, 1.25)
     color: $white
     background-color: $bright-pink
     border-radius: 26px
     box-shadow: 0 4px 12px $shadow, 0 0 0 4px fade-out($bright-pink, 0.7)
-    transition: background-color 0.1s
-
-    &:enabled:hover
-        color: $extra-dark
-        background-color: $white
-        box-shadow: 0 4px 12px $shadow, 0 0 0 4px $bright-pink
-        transition: 0.3s
-
-    &:enabled:focus
-        color: $white
-        background-color: $bright-pink
-        box-shadow: 0 4px 12px $shadow, 0 0 0 2px $extra-dark
-
-    &:disabled
-        font-weight: 400
-        background-color: $gray
-        box-shadow: 0 0 0 4px fade-out($extra-dark, 0.7)
 
     &--secondary
         color: $extra-dark
         background-color: $white
         box-shadow: 0 4px 12px $shadow, 0 0 0 4px fade-out($white, 0.6)
 
+@media (min-width: $desktop-width)
+    .button
+        transition: background-color 0.1s
         &:enabled:hover
-            background-color: fade-out($white, 0.6)
-            box-shadow: 0 4px 12px $shadow, 0 0 0 4px $white
-
-        &:enabled:focus
             color: $extra-dark
             background-color: $white
+            box-shadow: 0 4px 12px $shadow, 0 0 0 4px $bright-pink
+            transition: background-color 0.3s
+
+        &:enabled:focus
+            color: $white
+            background-color: $bright-pink
             box-shadow: 0 4px 12px $shadow, 0 0 0 2px $extra-dark
-            outline: none
 
         &:disabled
-            color: $gray
-            background-color: $light-gray
-            box-shadow: 0 0 0 4px fade-out($white, 0.6)
+            font-weight: 400
+            background-color: $gray
+            box-shadow: 0 0 0 4px fade-out($extra-dark, 0.7)
+
+        &--secondary
+            &:enabled:hover
+                background-color: fade-out($white, 0.6)
+                box-shadow: 0 4px 12px $shadow, 0 0 0 4px $white
+
+            &:enabled:focus
+                color: $extra-dark
+                background-color: $white
+                box-shadow: 0 4px 12px $shadow, 0 0 0 2px $extra-dark
+                outline: none
+
+            &:disabled
+                color: $gray
+                background-color: $light-gray
+                box-shadow: 0 0 0 4px fade-out($white, 0.6)

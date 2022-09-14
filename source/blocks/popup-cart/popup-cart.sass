@@ -67,10 +67,6 @@
         mask-repeat: no-repeat
         mask-position: center
         mask-size: cover
-    &:hover,
-    &:active,
-    &:focus
-        opacity: 1
 
 .popup-cart__order-container
     display: flex
@@ -83,7 +79,7 @@
 .popup-cart__total
     order: 1
     align-self: center
-    padding-bottom: 1rem
+    padding-bottom: 1.25rem
     font-weight: 700
     +font(0.875rem, 0.7)
 
@@ -115,3 +111,11 @@
     .popup-cart__wrapper
         &.active
             right: 100px
+
+    .popup-cart__button
+        transition: opacity 0.1s
+        &:hover,
+        &:active,
+        &:focus
+            opacity: 1
+            transition: opacity 0.3s

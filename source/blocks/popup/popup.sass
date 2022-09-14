@@ -7,9 +7,10 @@
     height: 100vh
     padding: 2rem
     background-color: $white
-    transition-duration: 0.2s
+    transition: 0.2s
     z-index: 30
     &.active
+        top: 0
         left: 0
         transition: left 0.4s ease
 
@@ -20,7 +21,6 @@
     width: 25px
     height: 25px
     margin-left: auto
-    transition: opacity 0.1s
     &::after
         position: absolute
         content: ""
@@ -34,11 +34,6 @@
         mask-repeat: no-repeat
         mask-position: center
         mask-size: cover
-    &:hover,
-    &:active,
-    &:focus
-        opacity: 0.5
-        transition: 0.3s
 
 @media (min-width: $tablet-width)
     .popup
@@ -46,7 +41,7 @@
         max-width: 550px
         opacity: 0
         border-radius: 4px
-        transition: 0.1s
+        transition: opacity 0.1s
         &.active
             top: 80px
             left: auto
@@ -54,4 +49,13 @@
             height: auto
             padding: 3rem
             opacity: 1
+            transition: opacity 0.3s
+
+@media (min-width: $desktop-width)
+    .popup__close-button
+        transition: opacity 0.1s
+        &:hover,
+        &:active,
+        &:focus
+            opacity: 0.5
             transition: opacity 0.3s

@@ -37,8 +37,6 @@
 .nav__link
     padding: calc(6rem / 16) 1rem
     border-radius: 26px
-    transition: background-color 0.1s
-    +link
     &--search
         display: none
 
@@ -118,6 +116,8 @@
             width: 11%
 
     .nav__link
+        transition: background-color 0.1s
+        +link
         &--search
             position: relative
             display: block
