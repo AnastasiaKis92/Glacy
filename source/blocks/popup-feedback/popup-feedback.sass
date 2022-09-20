@@ -1,0 +1,26 @@
+.popup.popup-feedback__wrapper,
+.popup.popup-feedback__wrapper.active
+    position: fixed
+
+.popup-feedback__form
+    display: flex
+    flex-direction: column
+
+.popup-feedback__input
+    & + &
+        margin-top: 1rem
+
+.popup-feedback__text
+    max-width: 100%
+    resize: none
+
+.popup-feedback__button
+    align-self: flex-end
+    margin-top: 1.25rem
+
+@media (min-width: $tablet-width)
+    .popup.popup-feedback__wrapper,
+    .popup.popup-feedback__wrapper.active
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)

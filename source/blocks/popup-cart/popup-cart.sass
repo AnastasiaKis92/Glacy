@@ -1,9 +1,3 @@
-.popup-cart__title
-    margin: 0
-    padding-bottom: 1rem
-    font-weight: 700
-    +font(1.125rem, calc(24 / 18))
-
 .popup-cart__list
     +reset-list
     margin-bottom: 1rem
@@ -84,13 +78,9 @@
     +font(0.875rem, 0.7)
 
 @media (min-width: $tablet-width)
-    .popup-cart__wrapper
-        &.active
-            right: 33px
-
-    .popup-cart__title
-        padding-bottom: 2rem
-        +font(1.5rem, calc(24 / 30))
+    .popup-cart__wrapper,
+    .popup-cart__wrapper.active
+        right: 33px
 
     .popup-cart__list
         margin-bottom: 2rem
@@ -108,8 +98,8 @@
         padding-bottom: 0
 
 @media (min-width: $desktop-width)
-    .popup-cart__wrapper
-        &.active
+    .popup-cart__wrapper,
+    .popup-cart__wrapper.active
             right: 100px
 
     .popup-cart__button

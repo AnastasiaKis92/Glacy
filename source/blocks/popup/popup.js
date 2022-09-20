@@ -4,7 +4,7 @@ const popupSearchForm = document.querySelector('.popup-search__form');
 const popupSearchInput = popupSearchForm.querySelector('.popup-search__input');
 const popupSearchButton = popupSearchForm.querySelector('.popup-search__button');
 const overlay = document.querySelector('.js-overlay-popup');
-const IDS = ['search', 'login', 'cart'];
+const buttonIds = ['search', 'login', 'cart', 'feedback'];
 
 // Очистка инпута поиска по крестику
 const onPopupSearchButtonClick = () => {
@@ -13,7 +13,7 @@ const onPopupSearchButtonClick = () => {
 popupSearchButton.addEventListener('click', onPopupSearchButtonClick);
 
 // Функция открытия/закрытия модалок
-IDS.forEach((item) => {
+buttonIds.forEach((item) => {
   const popupContainer = document.querySelector(`.popup-${item}__wrapper`);
   const popupForm = document.querySelector(`.popup-${item}__form`);
 
@@ -28,7 +28,7 @@ IDS.forEach((item) => {
   }
 
   // Открытие модального окна
-  document.querySelector(`.nav__link--${item}`).addEventListener('click', (evt) => {
+  document.getElementById(item).addEventListener('click', (evt) => {
     evt.preventDefault();
     popupContainer.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -53,7 +53,7 @@ IDS.forEach((item) => {
 });
 
 // Отменяет закрытие по ESC когда фокус на инпуте
-document.querySelectorAll('input').forEach((input) => {
+document.querySelectorAll('.input').forEach((input) => {
   input.addEventListener('keydown', onInputStopEsc);
 });
 
