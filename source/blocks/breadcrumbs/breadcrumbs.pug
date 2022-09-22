@@ -1,0 +1,10 @@
+section.breadcrumbs.container
+  h1.breadcrumbs__title Сливочное мороженое
+  ul.breadcrumbs__list
+    +listItem (['breadcrumbs__item', 'breadcrumbs__item--active'], 'breadcrumbs__link',
+    {href: 'index.html', text: 'Главная'},
+    {href: '#', text: 'Каталог'}
+    )
+    +listItem ('breadcrumbs__item', 'breadcrumbs__link',
+    {href: '#', text: 'Сливочное'}
+    )

@@ -8,3 +8,4 @@ mixin picture ( imgName, alt, width, height )
   picture
     source(type='image/webp' srcset=`images/${imgName}.webp 1x, images/${imgName}@2x.webp 2x`)
     img(loading='lazy' src=`images/${imgName}.png` srcset=`images/${imgName}@2x.png 2x` alt=`${alt}` width=`${width}` height=`${height}`)
+

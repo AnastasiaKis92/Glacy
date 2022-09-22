@@ -6,7 +6,15 @@ block head
   const pageDescription = 'Сайт о мороженом'
 
 block content
-  include /blocks/main-page/main-page
+  include /blocks/promo/promo.pug
+  include /blocks/sales/sales.pug
+  include /blocks/popular/popular.pug
+  include /blocks/about/about.pug
+  include /blocks/blog/blog.pug
+  include /blocks/delivery/delivery.pug
+  include /blocks/address/address.pug
+
+block popup
   include /blocks/popup-login/popup-login.pug
   include /blocks/popup-cart/popup-cart.pug
   include /blocks/popup-feedback/popup-feedback.pug

@@ -1,18 +1,26 @@
+-
+  const nav = [
+    {url: 'catalog.html', name: 'Каталог'},
+    {url: '#', name: `Доставка и${String.fromCharCode(160)}оплата`},
+    {url: '#', name: `О${String.fromCharCode(160)}компании`}
+  ];
+
+mixin navItem(url, name, current)
+  li.nav__item
+    a.nav__link(class={'nav__link--active': current}, href= url)= name
+
 nav.nav.color
   .nav__wrapper.nav__wrapper--left
     ul.nav__list
-      +listItem( 'nav__item', 'nav__link',
-        {href: '#', text: 'Каталог'},
-        {href: '#', text: `Доставка и${String.fromCharCode(160)}оплата`},
-        {href: '#', text: `О${String.fromCharCode(160)}компании`}
-        )
+      each i in nav
+        +navItem(i.url, i.name, i.url == pageUrl)
 
   .nav__wrapper.nav__wrapper--right
     ul.nav__list
       li.nav__item
         a.nav__link.tel.tel--desktop(href='tel:+78005558628') +7 800 555-86-28
 
-      li.nav__item.nav__item--popup
+      li.nav__item
         a.nav__link.nav__link--search.popup-search#search(href='#')
           span.visually-hidden Поиск
         .popup-search__wrapper

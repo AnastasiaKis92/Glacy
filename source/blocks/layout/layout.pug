@@ -1,9 +1,15 @@
+include /blocks/mixins/mixins
+include /blocks/classes/classes
+
 doctype html
 html.page(lang='ru')
+  block pageUrls
   include /blocks/head/head
-  
+
   body.page__body
     include /blocks/header/header
-    block content
+
+    main: block content
     include /blocks/footer/footer
+    block popup
     script(src='scripts/main.min.js' type='module')
