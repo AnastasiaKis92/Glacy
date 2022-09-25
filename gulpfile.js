@@ -209,7 +209,6 @@ export default gulp.series(
     svg,
     svgSprites
   ),
-  // criticalCSS,
   gulp.series(
     server,
     watcher
