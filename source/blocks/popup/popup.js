@@ -6,7 +6,7 @@ const popupSearchButton = popupSearchForm.querySelector('.popup-search__button')
 const overlay = document.querySelector('.js-overlay-popup');
 const buttonIds = ['search', 'login', 'cart', 'feedback'];
 
-// Очистка инпута поиска по крестику
+// Очистка поля поиска по крестику
 const onPopupSearchButtonClick = () => {
   popupSearchInput.value = '';
 };

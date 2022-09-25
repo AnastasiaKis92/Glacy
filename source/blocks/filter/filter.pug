@@ -1,0 +1,63 @@
+mixin inputItem(type, classItem, classLabel, classText, classMark, classInput, nameInput, idInput, status, valueInput, text)
+  if (type === 'checkbox')
+    li(class= classItem)
+      label(class= classLabel for= idInput)
+        span(class= classText)= text
+        input.visually-hidden(class= classInput id= idInput type='checkbox' name= idInput checked= status)
+        span(class= classMark)
+  if (type === 'radio')
+    li(class= classItem)
+      label(class= classLabel for= idInput)
+        span(class= classText)= text
+        input.visually-hidden(class= classInput id= idInput type='radio' name= nameInput checked= status value= valueInput)
+        span(class= classMark)
+-
+  const inputClasses = {
+    item: 'filter__item',
+    label: 'filter__label',
+    text: 'filter__text',
+    mark: 'filter__mark',
+    input: 'filter__input'
+  };
+  const checkbox = [
+    {id: 'chocolate', checked: 'checked', text: 'шоколадные'},
+    {id: 'shugar', checked: 'checked', text: 'сахарные посыпки'},
+    {id: 'fruits', text: 'фрукты'},
+    {id: 'syrup', text: 'сиропы'},
+    {id: 'jems', text: 'джемы'},
+  ];
+  const radio = [
+    {id: 'fat-0', value: '0%', text: '0%'},
+    {id: 'fat-10', value: '10%', checked: 'checked', text: 'до 10%'},
+    {id: 'fat-30', value: '30%', text: 'до 30%'},
+    {id: 'fat-over30', value: 'over-30%', text: 'выше 30%'},
+  ];
+
+section.filter.container
+  h2.visually-hidden Сортировка мороженого по критериям
+  form.filter__form(action='https://echo.htmlacademy.ru/' method='post')
+    .filter__select
+      p.filter__select-title Сортировка:
+      select.filter__select-container
+        option(value='popular') по популярности
+
+    fieldset.filter__fieldset
+      legend.filter__legend Цена: #[span.filter__price 100 ₽] – #[span.filter__price 500 ₽]
+      .filter__range-container
+        .filter__range
+          input.filter__range-input.visually-hidden(type='range')
+          input.filter__range-input.visually-hidden(type='range')
+
+    fieldset.filter__fieldset
+      legend.filter__legend Жирность:
+      ul.filter__list
+        each i in radio
+          +inputItem('radio', inputClasses.item, inputClasses.label, inputClasses.text, inputClasses.mark, inputClasses.input, 'fat-content', i.id, i.checked, i.value, i.text)
+
+    fieldset.filter__fieldset
+      legend.filter__legend Наполнители:
+      ul.filter__list
+        each i in checkbox
+          +inputItem('checkbox', inputClasses.item, inputClasses.label, inputClasses.text, inputClasses.mark, inputClasses.input, '', i.id, i.checked, i.value, i.text)
+
+    button.button.button--tertiary.filter__button Применить

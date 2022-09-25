@@ -9,4 +9,8 @@ const onButtonClick = (evt) => {
   document.body.classList.toggle('hidden');
 };
 
-burgerButton.addEventListener('click', onButtonClick);
+const addBurger = () => {
+  burgerButton.addEventListener('click', onButtonClick);
+};
+
+export {addBurger};

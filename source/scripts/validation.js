@@ -3,19 +3,23 @@ import flatpickr from 'flatpickr';
 import { Russian } from 'flatpickr/dist/l10n/ru.js';
 
 // Calendar
-flatpickr(document.getElementById('calendar'), {
-  altFormat: 'd.m.Y',
-  minDate: 'today',
-  maxDate: new Date().fp_incr(14),
-  altInput: true,
-  locale: Russian,
-  disableMobile: 'true',
-});
+const addCalendar = () => {
+  if (document.getElementById('calendar')) {
+    flatpickr(document.getElementById('calendar'), {
+      altFormat: 'd.m.Y',
+      minDate: 'today',
+      maxDate: new Date().fp_incr(14),
+      altInput: true,
+      locale: Russian,
+      disableMobile: 'true',
+    });
+  }
+};
 
-const form = document.querySelector('.delivery-order__form');
+// Telephone
 const error = document.querySelector('.delivery-order__input-error');
-const inputPhone = form.querySelector('input[type=tel]');
-const submitButton = form.querySelector('.delivery-order__button');
+const inputPhone = document.querySelector('input[type=tel]');
+const submitButton = document.querySelector('.delivery-order__button');
 
 const initPhoneMask = () => IMask(inputPhone, {
   mask: '+{7} 000 000-00-00',
@@ -40,6 +44,12 @@ const initPhoneMask = () => IMask(inputPhone, {
   }
 });
 
-inputPhone.addEventListener('keyup', () => {
-  initPhoneMask();
-});
+const addPhone = () => {
+  if (inputPhone) {
+    inputPhone.addEventListener('keyup', () => {
+      initPhoneMask();
+    });
+  }
+};
+
+export {addCalendar, addPhone};

@@ -1,4 +1,5 @@
 import Swiper, { Navigation, Pagination} from 'swiper';
+
 const slider = document.querySelectorAll('.promo__slide');
 const sliderData = Array.from(slider);
 const title = document.querySelector('.promo__title');
@@ -37,20 +38,24 @@ const promoSlider = new Swiper('.promo__slider', {
   },
 });
 
-promoSlider.on('transitionStart', function() {
-  // Переключение цвета
-  document.body.style.backgroundColor = sliderData[this.realIndex].dataset.color;
-  document.body.style.transition = 'background-color 0.5s';
-  document.querySelector('.color').style.background = `linear-gradient(${sliderData[this.realIndex].dataset.color}, 30%, white)`;
+const addSlider = () => {
+  promoSlider.on('transitionStart', function() {
+    // Переключение цвета
+    document.body.style.backgroundColor = sliderData[this.realIndex].dataset.color;
+    document.body.style.transition = 'background-color 0.5s';
+    document.querySelector('.color').style.background = `linear-gradient(${sliderData[this.realIndex].dataset.color}, 30%, white)`;
 
-  // Анимация текста
-  sliderDescr.forEach((el) => {
-    el.style.transition = 'opacity 0.3s';
-    el.style.opacity = 0;
-    setTimeout(() => {
-      el.style.opacity = 1;
-      text.innerHTML = sliderData[this.realIndex].dataset.text;
-      title.innerHTML = sliderData[this.realIndex].dataset.title;
-    }, 300);
+    // Анимация текста
+    sliderDescr.forEach((el) => {
+      el.style.transition = 'opacity 0.3s';
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.style.opacity = 1;
+        text.innerHTML = sliderData[this.realIndex].dataset.text;
+        title.innerHTML = sliderData[this.realIndex].dataset.title;
+      }, 300);
+    });
   });
-});
+};
+
+export {addSlider};

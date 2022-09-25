@@ -1,0 +1,240 @@
+.filter.container
+    padding-top: 0
+
+.filter__form
+    display: flex
+    flex-direction: column
+    +font(0.875rem, calc(20/14))
+
+.filter__select
+    margin-bottom: 1rem
+
+.filter__select-container
+    display: block
+    min-width: 196px
+    height: 2.25rem
+    padding: 0.5rem 1rem
+    color: $extra-dark
+    +font(0.875rem, calc(20/14))
+    background-color: fade-out($white, 0.7)
+    background-image: url("../images/svg-sprites/sprite.svg#icon-select")
+    background-repeat: no-repeat
+    background-position: right 1rem center
+    background-size: 12px auto
+    border: none
+    border-radius: 20px
+    cursor: pointer
+    appearance: none
+
+.filter__select-title
+    margin-top: 0
+    margin-bottom: 0.5rem
+
+.filter__fieldset
+    margin: 0
+    padding: 0
+    border: none
+    & + &
+        margin-top: 1rem
+
+.filter__legend
+    margin-bottom: 0.5rem
+
+.filter__list
+    +reset-list
+    background-color: fade-out($white, 0.7)
+    border-radius: 20px
+
+.filter__fieldset .filter__list
+    padding: 0.5rem 1.5rem
+
+.filter__item
+    position: relative
+    display: flex
+    align-items: center
+    & + &
+        margin-top: 0.5rem
+
+.filter__input
+    appearance: textfield
+
+.filter__label
+    position: relative
+    display: flex
+    align-items: center
+
+.filter__text
+    margin-left: 1.5rem
+
+.filter__mark
+    position: absolute
+    left: 0
+    display: inline-block
+    width: 15px
+    height: 15px
+    border: 1.4px solid $extra-dark
+    border-radius: 2px
+
+.filter__input[type='radio'] + .filter__mark
+    border-radius: 50%
+
+.filter__input[type='radio']:checked + .filter__mark
+    &::before
+        content: ''
+        +align-center
+        width: 6px
+        height: 6px
+        background-color: $extra-dark
+        border-radius: 50%
+
+.filter__input[type='checkbox']:checked + .filter__mark
+    border: none
+    &::before
+        content: ''
+        position: absolute
+        left: -11px
+        width: 37px
+        height: 15px
+        background-color: $extra-dark
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-tick")
+        mask-repeat: no-repeat
+        mask-size: contain
+
+.filter__button
+    align-self: center
+    min-width: 194px
+    margin-top: 1.2rem
+
+// Range
+.filter__range-container
+    position: relative
+    width: 196px
+    height: 36px
+    background-color: fade-out($white, 0.7)
+    border-radius: 20px
+
+.filter__range
+    position: absolute
+    top: 50%
+    left: 19px
+    transform: translateY(-50%)
+    width: 151px
+
+// noUiSlider
+// Трэк
+.noUi-target
+    height: 2px
+    background-color: fade-out($basic-dark, 0.7)
+    border: none
+    box-shadow: none
+
+// Трэк м/у ползунками
+.noUi-connect
+    background-color: $basic-dark
+
+// Ползунки
+.noUi-horizontal .noUi-handle
+    right: -11px
+    width: 16px
+    height: 16px
+    background-color: $extra-dark
+    border-radius: 50%
+    border: none
+    box-shadow: none
+    &::before
+        display: none
+    &::after
+        content: ''
+        left: 50%
+        transform: translateX(-50%)
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background-color: $white
+
+@media (min-width: $tablet-width)
+    .filter__form
+        flex-direction: row
+        flex-wrap: wrap
+        align-items: center
+
+    .filter__select
+        margin-bottom: 0
+        margin-right: 1.5rem
+
+    .filter__fieldset
+        margin-right: 1.5rem
+        & + &
+            margin-top: 0
+        &:last-of-type
+            margin-top: 1rem
+
+    .filter__list
+        display: flex
+
+    .filter__item
+        & + &
+            margin-top: 0
+            margin-left: 1rem
+
+    .filter__button
+        align-self: flex-end
+
+@media (min-width: $desktop-width)
+    .filter__form
+        max-width: $desktop-width
+
+    .filter__select-container
+        transition: background-color 0.1s
+        &:enabled:hover
+            background-color: fade-out($white, 0.5)
+            transition: 0.3s
+        &:enabled:focus
+            outline: 2px solid $white
+
+    // Hover
+    .filter__input[type='radio'] + .filter__mark,
+    .filter__input[type='checkbox'] + .filter__mark
+        transition: background-color 0.1s
+
+    .filter__input[type='radio']:enabled:hover + .filter__mark,
+    .filter__input[type='checkbox']:enabled:hover + .filter__mark
+        border-color: $white
+        transition: 0.3s
+        &::before
+            background-color: $white
+            transition: 0.3s
+
+    // Focus
+    .filter__label
+        &:focus-within .filter__mark
+            border: 2px solid $white
+
+    .filter__input[type='checkbox']:focus + .filter__mark,
+    .filter__input[type='radio']:focus + .filter__mark
+        &::before
+            background-color: $white
+
+    // Disabled
+    .filter__input[type='radio']:disabled + .filter__mark,
+    .filter__input[type='checkbox']:disabled + .filter__mark
+        border-color: fade-out($extra-dark, 0.7)
+        &::before
+            background-color: fade-out($extra-dark, 0.7)
+
+    // noUiSlider
+    // Ползунки
+    .noUi-horizontal .noUi-handle
+        transition: background-color 0.1s
+        &:hover
+            background-color: $white
+            transition: 0.3s
+            &::after
+                background-color: $extra-dark
+        &:focus
+            background-color: $white
+            outline: 2px solid $extra-dark
+            &::after
+                background-color: $extra-dark
+        &:active
+            background-color: $extra-dark

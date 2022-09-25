@@ -1,6 +1,6 @@
 .button
     +reset-btn
-    padding: 0.75rem 2rem
+    padding: 0.7rem 2rem
     margin-bottom: 0.25rem
     +Inter-700
     +font(1rem, 1.25)
@@ -13,6 +13,17 @@
         color: $extra-dark
         background-color: $white
         box-shadow: 0 4px 12px $shadow, 0 0 0 4px fade-out($white, 0.6)
+
+    &--tertiary
+        padding: 0.5rem 2rem
+        color: $extra-dark
+        +font(0.875rem, calc(20/14))
+        background-color: fade-out($white, 0.7)
+        box-shadow: 0 0 0 2px $white
+
+@media (min-width: $tablet-width)
+    .button
+        margin-bottom: 0
 
 @media (min-width: $desktop-width)
     .button
@@ -48,3 +59,19 @@
                 color: $gray
                 background-color: $light-gray
                 box-shadow: 0 0 0 4px fade-out($white, 0.6)
+
+        &--tertiary
+            &:enabled:hover
+                background-color: $white
+                box-shadow: 0 0 0 2px fade-out($white, 0.7)
+
+            &:enabled:focus
+                color: $extra-dark
+                background-color: fade-out($white, 0.7)
+                box-shadow: 0 0 0 2px $extra-dark
+                outline: none
+
+            &:disabled
+                color: fade-out($extra-dark, 0.6)
+                background-color: fade-out($white, 0.7)
+                box-shadow: 0 0 0 2px fade-out($white, 0.2)

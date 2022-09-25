@@ -30,6 +30,7 @@
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
     "imask": "^6.4.2",
+    "nouislider": "^15.6.1",
     "path": "^0.12.7",
     "postcss": "^8.3.11",
     "postcss-csso": "^6.0.0",

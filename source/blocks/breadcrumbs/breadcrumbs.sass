@@ -8,17 +8,18 @@
     order: 2
 
 .breadcrumbs__list
-    @include reset-list
+    +reset-list
     display: flex
     margin-bottom: 1rem
     order: 1
 
 .breadcrumbs__item
     position: relative
+    +font(0.875rem, calc(20/14))
     &::after
         content: ''
         position: absolute
-        top: 53%
+        top: 50%
         transform: translateY(-50%)
         width: 20px
         height: 10px
@@ -28,7 +29,14 @@
     & + &
         margin-left: 1.78rem
     &--active
-        border-bottom: 1px solid $extra-dark
+        font-weight: 700
 
 .breadcrumbs__item:last-of-type::after
         display: none
+
+@media (min-width: $desktop-width)
+    .breadcrumbs__link
+        padding: 0.2rem 0.6rem
+        border-radius: 26px
+        transition: background-color .1s
+        +link
