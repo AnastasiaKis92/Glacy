@@ -1,0 +1,85 @@
+.pagination__button
+    display: block
+    margin: 0 auto 1.4rem
+
+.pagination__wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+
+.pagination__list
+    +reset-list
+    display: flex
+    margin: 0 1.5rem
+
+.pagination__item
+    & + &
+        margin-left: 0.5rem
+
+.pagination__link
+    display: block
+    padding: 0.125rem 0.5rem
+    width: 27px
+    height: 26px
+    text-align: center
+    border-radius: 50%
+    &--active
+        background-color: $white
+
+.pagination__prev,
+.pagination__next
+    position: relative
+    +reset-btn
+    padding: 1rem 1rem
+    border-radius: 50%
+    &::after
+        +align-center
+        content: ''
+        width: 7px
+        height: 13px
+        background-color: $extra-dark
+        mask-repeat: no-repeat
+        mask-position: center
+        mask-size: cover
+
+.pagination__prev
+    &::after
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-prev")
+
+.pagination__next
+    &::after
+        mask-image: url("../images/svg-sprites/sprite.svg#icon-next")
+
+@media (min-width: $tablet-width)
+    .pagination
+        display: flex
+        justify-content: flex-end
+
+    .pagination__button
+        margin: 0 auto 0 calc(50% - 5.5rem)
+
+@media (min-width: $desktop-width)
+    .pagination__link
+        +link
+        &:hover
+            box-shadow: 0 0 0 1px $white
+
+    .pagination__prev,
+    .pagination__next
+        &:enabled:hover
+            background-color: fade-out($white, 0.5)
+            box-shadow: 0 0 0 1px $white
+            &::after
+                background-color: $white
+        &:focus
+            outline: none
+            box-shadow: 0 0 0 2px $extra-dark
+        &:enabled:active
+            background-color: $white
+            &::after
+                background-color: $extra-dark
+
+    .pagination__prev,
+    .pagination__next
+        &:disabled
+            opacity: 0.3

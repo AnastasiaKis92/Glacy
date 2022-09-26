@@ -10,10 +10,6 @@
     font-family: "Inter", "Arial", sans-serif
     font-weight: 700
 
-@mixin Inter-900
-    font-family: "Inter", "Arial", sans-serif
-    font-weight: 900
-
 @mixin reset-list
     margin: 0
     padding: 0
@@ -27,13 +23,12 @@
 
 @mixin link
     &
+        transition: background-color .1s
         &:hover
             background-color: fade-out($white, 0.5)
             transition: 0.3s
-
         &:active
             background-color: $white
-
         &:focus
             outline: none
             box-shadow: 0 0 0 2px $extra-dark

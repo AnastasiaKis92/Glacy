@@ -17,7 +17,6 @@ import squoosh from 'gulp-libsquoosh';
 import del from 'del';
 import htmlmin from 'gulp-htmlmin';
 import gcmq from 'gulp-group-css-media-queries';
-import critical from 'critical';
 import webpackStream from 'webpack-stream';
 import ghpages from 'gh-pages';
 
@@ -45,36 +44,6 @@ export const script = () => gulp.src('source/scripts/main.js')
   .pipe(terser())
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('./build/scripts'));
-
-// Критические стили CSS
-
-const crPages = ['index'];
-
-export const criticalCSS = (done) => {
-  crPages.forEach((page) => {
-    critical.generate({
-      base: './build/',
-      src: `${page}.html`,
-      css: [ 'css/styles.min.css' ],
-      target: {
-        css: `css/${page}-critical.css`,
-        uncritical: `css/${page}-async.css`
-      },
-      width: 1280,
-      height: 480,
-      // include: [
-      // 	'.footer'
-      // ],
-      ignore: {
-        rule: [
-          /swiper/,
-          /swiper-icons/
-        ]
-      }
-    });
-  });
-  done();
-};
 
 // Styles
 

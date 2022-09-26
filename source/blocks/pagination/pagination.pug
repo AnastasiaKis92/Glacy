@@ -1,0 +1,27 @@
+-
+  let i = 1;
+-
+  const urls = {
+    '1': '#',
+    '2': '#',
+    '3': '#',
+    '4': '#',
+    '5': '#'
+  };
+
+section.pagination.container
+  h2.visually-hidden
+  button.button.button--secondary.pagination__button(type='button') Показать ещё
+  .pagination__wrapper
+    button.pagination__prev(type='button' disabled)
+      span.visually-hidden Предыдущая страница
+    ul.pagination__list
+      while i <= 5
+        if (i === 1)
+          li.pagination__item
+            a.pagination__link.pagination__link--active(href=urls[i]) !{i++}
+        else
+          li.pagination__item
+            a.pagination__link(href=urls[i]) !{i++}
+    button.pagination__next(type='button')
+      span.visually-hidden Следующая страница
