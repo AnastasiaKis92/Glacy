@@ -1,18 +1,18 @@
-mixin inputItem(type, classItem, classLabel, classText, classMark, classInput, nameInput, idInput, status, valueInput, text)
+mixin field(type, name, id, status, value, text)
   if (type === 'checkbox')
-    li(class= classItem)
-      label(class= classLabel for= idInput)
-        span(class= classText)= text
-        input.visually-hidden(class= classInput id= idInput type='checkbox' name= idInput checked= status)
-        span(class= classMark)
+    li(class= fieldClasses.item)
+      label(class= fieldClasses.label for= id)
+        span(class= fieldClasses.text)= text
+        input.visually-hidden(class= fieldClasses.input id= id type='checkbox' name= id checked= status)
+        span(class= fieldClasses.mark)
   if (type === 'radio')
-    li(class= classItem)
-      label(class= classLabel for= idInput)
-        span(class= classText)= text
-        input.visually-hidden(class= classInput id= idInput type='radio' name= nameInput checked= status value= valueInput)
-        span(class= classMark)
+    li(class= fieldClasses.item)
+      label(class= fieldClasses.label for= idInput)
+        span(class= fieldClasses.text)= text
+        input.visually-hidden(class= fieldClasses.input id= id type='radio' name= name checked= status value= value)
+        span(class= fieldClasses.mark)
 -
-  const inputClasses = {
+  const fieldClasses = {
     item: 'filter__item',
     label: 'filter__label',
     text: 'filter__text',
@@ -52,12 +52,12 @@ section.filter.container
       legend.filter__legend Жирность:
       ul.filter__list
         each i in radio
-          +inputItem('radio', inputClasses.item, inputClasses.label, inputClasses.text, inputClasses.mark, inputClasses.input, 'fat-content', i.id, i.checked, i.value, i.text)
+          +field('radio', 'fat-content', i.id, i.checked, i.value, i.text)
 
     fieldset.filter__fieldset
       legend.filter__legend Наполнители:
       ul.filter__list
         each i in checkbox
-          +inputItem('checkbox', inputClasses.item, inputClasses.label, inputClasses.text, inputClasses.mark, inputClasses.input, '', i.id, i.checked, i.value, i.text)
+          +field('checkbox', '', i.id, i.checked, i.value, i.text)
 
     button.button.button--tertiary.filter__button(type='submit') Применить
